@@ -50,7 +50,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
             <h1>Relax in our luxurious rooms</h1>
             <div class="room-div-wrapper">
                 <div class="room">
-                    <img class="room-img" src="../assets/images/hotelrooms/rooms/room4.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-4.JPEG" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
@@ -67,7 +67,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
                     </div>
                 </div>
                 <div class="room">
-                    <img class="room-img" src="../assets/images/hotelrooms/rooms/room5.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-5.JPEG" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
@@ -84,7 +84,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
                     </div>
                 </div>
                 <div class="room">
-                    <img class="room-img" src="../assets/images/hotelrooms/rooms/room6.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-6.JPEG" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
@@ -106,22 +106,15 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
     <div class="places-wrapper">
         <h1 class="places-wrapper-title">Places 5 minutes from our hotel</h1>
         <div class="place">
-            <img class="place-img" src="../assets/images/ადგილები/ანჩლისხატის-ეკლესია.jpg" alt="">
+            <img class="place-img" src="../assets/images/ადგილები/ქართულ-ებრაული-მუზეუმი.jpg" alt="">
             <div class="text-div">
-                <h2>Anchiskhati Basilica </h2>
+                <h2>Museum of History of Georgian Jews </h2>
                 <div class="text">
-                    <p>The Anchiskhati Basilica of St Mary (Georgian: ანჩისხატი) is the oldest surviving church in Tbilisi,
-                        Georgia. It belongs to the Georgian Orthodox Church and dates from the sixth century. </p>
-                    <p>According to the old Georgian annals, the church was built by the King Dachi of Iberia (circa
-                        522-534) who had made Tbilisi his capital. Originally dedicated to the Virgin Mary, it was renamed
-                        Anchiskhati (i.e., icon of Ancha) in 1675 when the treasured icon of the Savior created by the
-                        twelfth-century goldsmith Beka Opizari at the Ancha monastery in Klarjeti (in what is now part of
-                        northeast Turkey) was moved to Tbilisi to preserve it from an Ottoman invasion. The icon was
-                        preserved at the Basilica of St Mary for centuries (it is now on display at the Art Museum of
-                        Georgia). </p>
-                    <p>The basilica was damaged and rebuilt on several occasions from the 15th through 17th centuries due to
-                        wars between Georgia and the Persians and Turks. The brick belfry near the Anchiskhati Basilica was
-                        built by Catholicos Domenti in 1675. </p>
+                    <p>The Museum is situated in the old side of Tbilisi.The building of the Museum, which beautifies Old
+                        Tbilisi, erected in place of the former synagogue constructed in 1914 year.</p>
+                    <p>The Museum is a treasure-house of centuries-old history of the Jews life in Georgia and a unique
+                        scientific center studying Georgian-Jewish relations.
+                        . </p>
                 </div>
             </div>
             <div class="attractions-link">
@@ -155,8 +148,25 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
                 <img src="../assets/icons/long-arrow-right.png" alt="">
             </div>
         </div>
+        <div class="place">
+            <img class="place-img" src="../assets/images/ადგილები/გოგირდის-აბანო.jpg" alt="">
+            <div class="text-div">
+                <h2>Abanotubani</h2>
+                <div class="text">
+                    <p>Abanotubani (Georgian: აბანოთუბანი, literally "bath district") is the ancient district of Tbilisi,
+                        Georgia, known for its sulphuric baths. </p>
+                    <p>Located at the eastern bank of the Mtkvari River at the foot of Narikala fort across Metekhisubani,
+                        Abanotubani is an important historic part of the city: it is where according to a legend the King of
+                        Iberia, Vakhtang Gorgasali’s falcon fell, leading to a discovery of the hot springs and,
+                        subsequently, to founding of a new capital. </p>
+                </div>
+            </div>
+            <div class="attractions-link">
+                <p>Learn More</p>
+                <img src="../assets/icons/long-arrow-right.png" alt="">
+            </div>
+        </div>
     </div>
-
 </template>
 <style scoped>
 @font-face {
