@@ -50,7 +50,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
             <h1>Relax in our luxurious rooms</h1>
             <div class="room-div-wrapper">
                 <div class="room">
-                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/room23.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/hotel-rooms/rooms/room4.JPEG" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
@@ -67,7 +67,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
                     </div>
                 </div>
                 <div class="room">
-                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/room17.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/hotel-rooms/rooms/room5.JPEG" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
@@ -84,7 +84,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
                     </div>
                 </div>
                 <div class="room">
-                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/room6.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/hotel-rooms/rooms/room6.JPEG" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
