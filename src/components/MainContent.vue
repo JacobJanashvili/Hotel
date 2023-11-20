@@ -50,7 +50,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
             <h1>Relax in our luxurious rooms</h1>
             <div class="room-div-wrapper">
                 <div class="room">
-                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-4.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-4.png" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
@@ -67,7 +67,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
                     </div>
                 </div>
                 <div class="room">
-                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-5.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-5.png" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
@@ -84,7 +84,7 @@ const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
                     </div>
                 </div>
                 <div class="room">
-                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-6.JPEG" alt="">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-6.png" alt="">
                     <div class="price-wrapper">
                         <h3 class="room-title">Double Deluxe Room</h3>
                         <div class="price-subwrapper">
