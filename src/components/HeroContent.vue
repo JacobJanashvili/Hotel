@@ -22,7 +22,7 @@
 
 .hero-wrapper {
     height: 100vh;
-    background: url(../assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-2.JPEG);
+    background: url(../assets/images/hotelrooms/tourfa-tbilisi-pic-2.JPEG);
     background-size: cover;
     display: flex;
     justify-content: center;
