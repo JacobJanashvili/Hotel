@@ -1,18 +1,162 @@
 <script setup>
+import 'swiper/css';
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import { onMounted } from 'vue';
-import axiox from 'axios'
+import { register } from 'swiper/element/bundle';
+register()
 const api_key = "AIzaSyB3H6rDOuQixdWki7N2pmcH1MS9ieMsF3Y"
+// const getReviews = `https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJ48imxoYNREARNlpd35vbTdM&reviews_sort&key=${api_key}`
 
-
-const getReviews = `https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJ48imxoYNREARNlpd35vbTdM&reviews_sort&key=${api_key}`
-onMounted(() => {
-   fetch(getReviews).then(res=>console.log(res)).catch(err=>console.log(err))
-})
 </script>
 <template>
     <div class="reviews-wrapper">
         <h1>What our customers say about us</h1>
+        <swiper>
+            <swiper-container :infinite="true" :centered-slides="true" :pagination="{
+                clickable: true
+            }" loop="true" :autoplay="{
+    delay: 3500
+}" :fade="{ crossfade: true }">
+                <swiper-slide>
+                    <img src="../assets/images/google-review-user-photos/google-review-N1.png" alt="">
+                    <h3 class="review-user">ohad regev</h3>
+                    <p class="review-text">A very nice hotel. The rooms are clean and luxurious. The breakfast is excellent,
+                        the owner of the
+                        hotel is very nice and asked if we needed anything and if everything was fine. Very good and
+                        recommended
+                    </p>
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="../assets/images/google-review-user-photos/google-review-N2.png" alt="">
+                    <h3 class="review-user">asaf shlomo</h3>
+                    <p class="review-text">Great hotel with great service, very accomodating and the staff can speak
+                        English. Great location in the middle of tibilisi. Overall a great experience. Great for Jews who
+                        want to eat kosher food while in Georgia.
+                    </p>
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="../assets/images/google-review-user-photos/google-review-N3.png" alt="">
+                    <h3 class="review-user">Rinzy Ousmand</h3>
+                    <p class="review-text">
+                        Amazing
+                    </p>
+                </swiper-slide>
+            </swiper-container>
+        </swiper>
     </div>
+    <div class="rooms-wrapper">
+        <div class="rooms-subwrapper">
+            <h1>Relax in our luxurious rooms</h1>
+            <div class="room-div-wrapper">
+                <div class="room">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/room23.JPEG" alt="">
+                    <div class="price-wrapper">
+                        <h3 class="room-title">Double Deluxe Room</h3>
+                        <div class="price-subwrapper">
+                            <p class="price-intro">From</p>
+                            <div class="price">
+                                <span class="price-tag">$99</span>
+                                <span>/night</span>
+                            </div>
+                        </div>
+                        <div class="room-link">
+                            <p>View</p>
+                            <img src="../assets/icons/long-arrow-right.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="room">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/room17.JPEG" alt="">
+                    <div class="price-wrapper">
+                        <h3 class="room-title">Double Deluxe Room</h3>
+                        <div class="price-subwrapper">
+                            <p class="price-intro">From</p>
+                            <div class="price">
+                                <span class="price-tag">$99</span>
+                                <span>/night</span>
+                            </div>
+                        </div>
+                        <div class="room-link">
+                            <p>View</p>
+                            <img src="../assets/icons/long-arrow-right.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="room">
+                    <img class="room-img" src="../assets/images/სასტუმროს-ფოტოები/ოთახები/room6.JPEG" alt="">
+                    <div class="price-wrapper">
+                        <h3 class="room-title">Double Deluxe Room</h3>
+                        <div class="price-subwrapper">
+                            <p class="price-intro">From</p>
+                            <div class="price">
+                                <span class="price-tag">$99</span>
+                                <span>/night</span>
+                            </div>
+                        </div>
+                        <div class="room-link">
+                            <p>View</p>
+                            <img src="../assets/icons/long-arrow-right.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="places-wrapper">
+        <h1 class="places-wrapper-title">Places 5 minutes from our hotel</h1>
+        <div class="place">
+            <img class="place-img" src="../assets/images/ადგილები/ანჩლისხატის-ეკლესია.jpg" alt="">
+            <div class="text-div">
+                <h2>Anchiskhati Basilica </h2>
+                <div class="text">
+                    <p>The Anchiskhati Basilica of St Mary (Georgian: ანჩისხატი) is the oldest surviving church in Tbilisi,
+                        Georgia. It belongs to the Georgian Orthodox Church and dates from the sixth century. </p>
+                    <p>According to the old Georgian annals, the church was built by the King Dachi of Iberia (circa
+                        522-534) who had made Tbilisi his capital. Originally dedicated to the Virgin Mary, it was renamed
+                        Anchiskhati (i.e., icon of Ancha) in 1675 when the treasured icon of the Savior created by the
+                        twelfth-century goldsmith Beka Opizari at the Ancha monastery in Klarjeti (in what is now part of
+                        northeast Turkey) was moved to Tbilisi to preserve it from an Ottoman invasion. The icon was
+                        preserved at the Basilica of St Mary for centuries (it is now on display at the Art Museum of
+                        Georgia). </p>
+                    <p>The basilica was damaged and rebuilt on several occasions from the 15th through 17th centuries due to
+                        wars between Georgia and the Persians and Turks. The brick belfry near the Anchiskhati Basilica was
+                        built by Catholicos Domenti in 1675. </p>
+                </div>
+            </div>
+            <div class="attractions-link">
+                <p>Learn More</p>
+                <img src="../assets/icons/long-arrow-right.png" alt="">
+            </div>
+        </div>
+        <div class="place">
+            <img class="place-img" src="../assets/images/ადგილები/რეზო-გაბრიაძის-თეატრი.jpg" alt="">
+            <div class="text-div">
+                <h2>Rezo Gabriadze Marionette Theatre</h2>
+                <div class="text">
+                    <p>Though modest in size, The Gabriadze Theatre is among the world’s preeminent cultural institutions.
+                        Presenting mature puppet performances full of depth and meaning, it has gained the respect and
+                        recognition of international audiences and critics alike. </p>
+                    <p>Based in its home theatre in Tbilisi, Georgia, the company is under the direction of a noted artist,
+                        writer, and director Rezo Gabriadze (whose awards include Commander of the Order of Arts and Letters
+                        of the French Republic – France’s highest recognition for cultural achievements.) The Gabriadze
+                        Theatre has toured extensively, its recent venues including: Lincoln Center Festival in New York;
+                        The Edinburgh Festival; Bogota Theatre Festival; San Sebastian Festival, Spain; Toronto World Stage
+                        Festival; The Barbican Centre, London; Theatre de la Ville, Paris; The Kennedy Center Festival,
+                        Washington, D.C.; the Theatre Art Studio in Moscow. </p>
+                    <p>The Gabriadze Theatre stands in the heart of Tbilisi’s historic Old Town. The beautiful building of
+                        the unique marionette theatre was designed by Gabriadze himself. Among the shows in its current
+                        repertoire are: “The Autumn of My Spring”, “Stalingrad”, “Ramona”, “Diamond of Marshal de Fant’e”.
+                    </p>
+                </div>
+            </div>
+            <div class="attractions-link">
+                <p>Learn More</p>
+                <img src="../assets/icons/long-arrow-right.png" alt="">
+            </div>
+        </div>
+    </div>
+
 </template>
 <style scoped>
 @font-face {
@@ -24,11 +168,165 @@ onMounted(() => {
     font-family: 'VAG Rounded';
 }
 
+.swiper-slide {
+    width: 100px;
+    height: 100px;
+}
+
 .reviews-wrapper {
-    margin-top: 100px;
+
+    margin: 100px auto;
+    text-align: center;
+    width: 50%;
+}
+
+.review-text {
+    margin: 10px auto 35px auto;
+    width: 700px;
+    font-size: 14px;
+}
+
+swiper-container {
+    margin-top: 25px;
+
+}
+
+.rooms-wrapper {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    height: 500px;
+
+}
+
+.rooms-subwrapper h1 {
+    text-align: center;
+}
+
+
+
+.room {
+    width: 300px;
+    height: 400px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 50px -3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 50px 25px;
+}
+
+.room-img {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.room-div-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.room h3 {
+
+    font-weight: 400;
+}
+
+.price-wrapper {
+    padding: 20px 0 5px 25px;
+}
+
+.price-subwrapper {
+    margin-top: 20px;
+}
+
+.price {
+    display: inline-block;
+}
+
+.price-tag {
+    font-size: 30px;
+    color: #1E90FF;
+}
+
+.room-link {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-right: 20px;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    color: #1E90FF;
+}
+
+.link-icon {
+    width: 10px;
+}
+
+.room-link img {
+    margin-left: 10px;
+    filter: invert(52%) sepia(43%) saturate(6048%) hue-rotate(193deg) brightness(102%) contrast(101%);
+}
+
+.room-link p {
+    font-weight: 400;
+}
+
+.places-wrapper {
+    width: 80%;
+    margin: 100px auto;
+}
+
+.places-wrapper-title {
+    text-align: center;
+}
+
+.place {
+    margin-top: 50px;
+    display: flex;
+    box-shadow: 0px 0px 50px -3px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.place-img {
+    width: 80%;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+}
+
+.text-div {
+    width: 100%;
+    text-align: center;
+    height: 500px;
+}
+
+.text-div h2 {
+    font-weight: 400;
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.text {
+    text-align: justify;
+    padding: 0 80px 0 80px;
+}
+
+.text p {
+    margin: 20px 0;
+}
+
+.attractions-link {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.attractions-link img {
+    margin-left: 10px;
+
+
 }
 </style>

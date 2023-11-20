@@ -2,11 +2,13 @@
 import Header from './components/Header.vue';
 import HeroContent from './components/HeroContent.vue';
 import MainContent from './components/MainContent.vue';
+import Footer from './components/Footer.vue';
 </script>
 <template>
     <Header />
     <HeroContent />
     <MainContent />
+    <Footer />
 </template>
 <style>
 * {

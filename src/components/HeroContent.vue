@@ -70,5 +70,6 @@
     right: 40%;
     width: 100%;
     animation: website-ready 2s  forwards;
+    z-index: 1;
 }
 </style>
