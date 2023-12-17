@@ -1,7 +1,7 @@
 <template>
     <div class="hero-wrapper">
         <div class="hero-subwrapper">
-            <h1>Hotel at the heart of Tbilisi</h1>
+            <h1>Boutique hotel located in the Old City of Tbilisi</h1>
             <p>Your adventure starts here</p>
         </div>
     </div>
@@ -10,20 +10,18 @@
 
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 @font-face {
     font-family: 'VAG Rounded';
     src: url(../assets/fonts/VAGRoundedRegular.ttf);
 }
 
-* {
-    font-family: 'VAG Rounded';
-}
 
 
 .hero-wrapper {
     height: 100vh;
-    background: url(../assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-2.JPEG);
-    background-size: cover;
+    background: url(../assets/images/სასტუმროს-ფოტოები/main-background-min.jpg) no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,13 +38,21 @@
 
 .hero-subwrapper {
     color: white;
-    z-index: 1;
+    z-index: 0;
     font-size: 25px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
+}
+
+.hero-subwrapper h1 {
+    font-size: 32px;
+}
+
+.hero-subwrapper p {
+    margin-top: 10px;
 }
 
 @keyframes website-ready {
@@ -69,7 +75,20 @@
     top: 100%;
     right: 40%;
     width: 100%;
-    animation: website-ready 2s  forwards;
+    animation: website-ready 2s forwards;
     z-index: 1;
 }
-</style>
+
+@media (max-width: 900px) and (min-width: 100px) {
+
+    .hero-subwrapper p{
+        font-size: 17px;
+    }
+    .hero-subwrapper {
+        text-align: center;
+    }
+
+    .hero-subwrapper h1 {
+        font-size: 28px;
+    }
+}</style>
