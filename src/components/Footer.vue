@@ -11,29 +11,29 @@
                 <div class="item-list">
                     <div class="item">
                         <p class="item-title">Kosher Menu</p>
-                        <img class="item-icon" src="src/assets/icons/chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="../assets/icons/chevron-right-solid.svg" alt="">
                     </div>
                     <div class="item">
                         <p class="item-title">Rooms</p>
-                        <img class="item-icon" src="src/assets/icons/chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="../assets/icons/chevron-right-solid.svg" alt="">
                     </div>
                     <div class="item">
                         <p class="item-title">Gallery</p>
-                        <img class="item-icon" src="src/assets/icons/chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="../assets/icons/chevron-right-solid.svg" alt="">
                     </div>
                 </div>
                 <div class="item-list">
                     <div class="item">
                         <p class="item-title">Home</p>
-                        <img class="item-icon" src="src/assets/icons/chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="../assets/icons/chevron-right-solid.svg" alt="">
                     </div>
                     <div class="item">
                         <p class="item-title">About</p>
-                        <img class="item-icon" src="src/assets/icons/chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="../assets/icons/chevron-right-solid.svg" alt="">
                     </div>
                     <div class="item">
                         <p class="item-title">Attractions</p>
-                        <img class="item-icon" src="src/assets/icons/chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="../assets/icons/chevron-right-solid.svg" alt="">
                     </div>
                 </div>
                 <div class="footer-contact-menu">

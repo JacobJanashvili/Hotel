@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import Footer from './Footer.vue';
-import Header from './header.vue';
+import Header from './Header.vue';
 import Dialog from 'primevue/dialog';
 const visible = ref(false)
 const clcikedAttractionTitle = ref('')

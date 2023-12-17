@@ -75,10 +75,10 @@
                 </div>
             </div>
         </div>
-        <img @click="triggerBurgerMenu" class="burger-menu" src="src/assets/icons/bars-solid.svg" alt=""
+        <img @click="triggerBurgerMenu" class="burger-menu" src="../assets/icons/bars-solid.svg" alt=""
             v-if="pageWidth < 900 && !burgerMenuClicked">
         <img v-if="pageWidth < 900 && burgerMenuClicked" @click="triggerBurgerMenu" class="close-burger-menu"
-            src="src/assets/icons/xmark-solid.svg" alt="">
+            src="../assets/icons/xmark-solid.svg" alt="">
         <div v-if="burgerMenuClicked" class="opened-mobile-menu">
             <div class="mobile-menu-item">
                 <img class="mobile-menu-img" src="../assets/icons/house-solid.svg" alt="">
