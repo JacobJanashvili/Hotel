@@ -1,7 +1,7 @@
 <script setup>
 import 'primevue/resources/themes/fluent-light/theme.css'
 import '@splidejs/vue-splide/css/skyblue';
-import Header from './header.vue';
+import Header from './Header.vue';
 import HeroContent from './herocontent.vue'
 import Footer from './Footer.vue'
 import { computed } from '@vue/reactivity';
@@ -32,15 +32,15 @@ const carouselData = [
 ]
 const roomCarouselData = [
     {
-        img: "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-4-min.png",
-        title: "Double Deluxe Room",
+        img: "tourfa-tbilisi-pic-4-min.jpg",
+        title: "Double with extra-bed",
     },
     {
-        img: "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-5-min.png",
-        title: "Standard Room"
+        img: "tourfa-tbilisi-pic-5-min.jpg",
+        title: "Twin with extra-bed"
     },
     {
-        img: "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-6-min.png",
+        img: "tourfa-tbilisi-pic-6-min.jpg",
         title: "Family Room"
     }
 ]

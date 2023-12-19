@@ -6,4 +6,8 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   base: '/Hotel/',
   plugins: [vue()],
+      alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+
 })

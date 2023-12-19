@@ -2,14 +2,14 @@
     <div class="menu"
         :style="[{ backgroundColor: scrollValue > 4 ? 'white' : (pageWidth < 900 ? 'white' : 'transparent') }, { color: scrollValue > 4 ? 'black' : 'white' }, { boxShadow: scrollValue > 4 ? '3px 10px 5px 0px rgba(0,0,0,0.11)' : '' }, { transition: '.3s' }]">
         <img :style="{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : (pageWidth > 900 ? 'invert(96%) sepia(40%) saturate(0%) hue-rotate(103deg) brightness(105%) contrast(104%)' : 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)') }"
-            class="header-icon" src="../assets/logo.svg" alt="">
+            class="header-icon" src="logo.svg" alt="">
         <div class="menu-items">
             <div @mouseenter="hover = true, menu_id = 5" @mouseleave="hover = false, console.log(hover)">
                 <router-link to="/"
                     :style="{ color: scrollValue > 4 ? 'black' : 'white', 'pointer-events': router.currentRoute.value.path === '/' ? 'none' : 'auto' }"
                     :class="{ 'menu-item': true, 'active': router.currentRoute.value.path === '/' }">
                     <img :style="[{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: hover && menu_id == 5 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: router.currentRoute.value.path === '/' ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : hover && menu_id == 5 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }]"
-                        class="menu-icon" src="../assets/icons/house-solid.svg" alt="">
+                        class="menu-icon" src="house-solid.svg" alt="">
                     <p class="menu-text">home</p>
                 </router-link>
 
@@ -19,7 +19,7 @@
                     :style="{ color: scrollValue > 4 ? 'black' : 'white', 'pointer-events': router.currentRoute.value.path === '/about' ? 'none' : 'auto' }"
                     :class="{ 'menu-item': true, 'active': router.currentRoute.value.path === '/about' }">
                     <img :style="[{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: hover && menu_id == 7 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: router.currentRoute.value.path === '/about' ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : hover && menu_id == 7 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }]"
-                        class="menu-icon" src="../assets/icons/address-card-solid.svg" alt="">
+                        class="menu-icon" src="address-card-solid.svg" alt="">
                     <p class="menu-text">about</p>
                 </router-link>
             </div>
@@ -28,21 +28,21 @@
                     :style="{ color: scrollValue > 4 ? 'black' : 'white', 'pointer-events': router.currentRoute.value.path === '/attractions' ? 'none' : 'auto' }"
                     :class="{ 'menu-item': true, 'active': router.currentRoute.value.path === '/attractions' }">
                     <img :style="[{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: hover && menu_id == 8 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' },{ filter: router.currentRoute.value.path === '/attractions' ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : hover && menu_id == 8 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }]"
-                        class="menu-icon" src="../assets/icons/city-solid.svg" alt="">
+                        class="menu-icon" src="city-solid.svg" alt="">
                     <p class="menu-text">attractions</p>
                 </router-link>
             </div>
             <div @mouseenter="hover = true, menu_id = 1" @mouseleave="hover = false, console.log(hover)">
                 <router-link to="/" class="menu-item" :style="{ color: scrollValue > 4 ? 'black' : 'white' }">
                     <img :style="[{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: hover && menu_id == 1 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }]"
-                        class="menu-icon" src="../assets/icons/bell-concierge-solid.svg" alt="">
+                        class="menu-icon" src="bell-concierge-solid.svg" alt="">
                     <p class="menu-text">kosher menu</p>
                 </router-link>
             </div>
             <div @mouseenter="hover = true, menu_id = 2" @mouseleave="hover = false, console.log(hover)">
                 <router-link to="/" class="menu-item" :style="{ color: scrollValue > 4 ? 'black' : 'white' }">
                     <img :style="[{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: hover && menu_id == 2 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }]"
-                        class="menu-icon" src="../assets/icons/bed-solid.svg" alt="">
+                        class="menu-icon" src="bed-solid.svg" alt="">
                     <p class="menu-text">rooms</p>
                 </router-link>
             </div>
@@ -51,7 +51,7 @@
                     :class="{ 'menu-item': true, 'active': router.currentRoute.value.path === '/gallery' }"
                     :style="{ 'pointer-events': router.currentRoute.value.path === '/gallery' ? 'none' : 'auto', color: scrollValue > 4 ? 'black' : 'white' }">
                     <img :style="[{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: hover && menu_id == 3 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: router.currentRoute.value.path === '/gallery' ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : hover && menu_id == 3 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }]"
-                        class="menu-icon" src="../assets/icons/gallery.svg" alt="">
+                        class="menu-icon" src="gallery.svg" alt="">
                     <p class="menu-text">
                         gallery
                     </p>

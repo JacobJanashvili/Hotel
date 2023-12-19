@@ -1,64 +1,64 @@
 <script setup>
-import Header from './header.vue';
+import Header from './Header.vue';
 import TabView from 'primevue/tabview';
 import TabPanel from 'primevue/tabpanel';
 import Footer from './Footer.vue';
 
 const displayAllPhotos = [
-    "src/assets/images/სასტუმროს-ახალი-ფოტოები/IMG_8247-min.png",
-    "src/assets/images/სასტუმროს-ახალი-ფოტოები/IMG_8248-min.png",
-    "src/assets/images/სასტუმროს-ახალი-ფოტოები/IMG_8247-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-3-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-4-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-5-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-6-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-10-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-11-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-13-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-15-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-16-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-17-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-18-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-21-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-22-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-23-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-24-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-26-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-27-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-28-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-29-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-30-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-7-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-2-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-19-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-14-min.png"
+    "tourfa-tbilisi-pic-2-min.jpg",
+    "DSC074411637458731343.jpg",
+    "IMG_8247-min.jpg",
+    "tourfa-tbilisi-pic-3-min.jpg",
+    "tourfa-tbilisi-pic-4-min.jpg",
+    "tourfa-tbilisi-pic-5-min.jpg",
+    "tourfa-tbilisi-pic-6-min.jpg",
+    "tourfa-tbilisi-pic-10-min.jpg",
+    "tourfa-tbilisi-pic-11-min.jpg",
+    "tourfa-tbilisi-pic-13-min.jpg",
+    "tourfa-tbilisi-pic-15-min.jpg",
+    "tourfa-tbilisi-pic-16-min.jpg",
+    "tourfa-tbilisi-pic-17-min.jpg",
+    "tourfa-tbilisi-pic-18-min.jpg",
+    "tourfa-tbilisi-pic-21-min.jpg",
+    "tourfa-tbilisi-pic-22-min.jpg",
+    "tourfa-tbilisi-pic-23-min.jpg",
+    "tourfa-tbilisi-pic-24-min.jpg",
+    "tourfa-tbilisi-pic-26-min.jpg",
+    "tourfa-tbilisi-pic-27-min.jpg",
+    "tourfa-tbilisi-pic-28-min.jpg",
+    "tourfa-tbilisi-pic-29-min.jpg",
+    "tourfa-tbilisi-pic-30-min.jpg",
+    "tourfa-tbilisi-pic-7-min.jpg",
+    "tourfa-tbilisi-pic-2-min.jpg",
+    "tourfa-tbilisi-pic-19-min.jpg",
+    "tourfa-tbilisi-pic-14-min.jpg"
 ]
 const displayRestaurant = [
-    "src/assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-19-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-14-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/tourfa-tbilisi-pic-7-min.png",
+    "tourfa-tbilisi-pic-19-min.jpg",
+    "tourfa-tbilisi-pic-14-min.jpg",
+    "tourfa-tbilisi-pic-7-min.jpg",
 ]
 const displayRooms = [
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-3-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-4-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-5-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-6-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-10-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-11-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-13-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-15-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-16-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-17-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-18-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-21-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-22-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-23-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-24-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-26-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-27-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-28-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-29-min.png",
-    "src/assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-30-min.png",
+    "tourfa-tbilisi-pic-3-min.jpg",
+    "tourfa-tbilisi-pic-4-min.jpg",
+    "tourfa-tbilisi-pic-5-min.jpg",
+    "tourfa-tbilisi-pic-6-min.jpg",
+    "tourfa-tbilisi-pic-10-min.jpg",
+    "tourfa-tbilisi-pic-11-min.jpg",
+    "tourfa-tbilisi-pic-13-min.jpg",
+    "tourfa-tbilisi-pic-15-min.jpg",
+    "tourfa-tbilisi-pic-16-min.jpg",
+    "tourfa-tbilisi-pic-17-min.jpg",
+    "tourfa-tbilisi-pic-18-min.jpg",
+    "tourfa-tbilisi-pic-21-min.jpg",
+    "tourfa-tbilisi-pic-22-min.jpg",
+    "tourfa-tbilisi-pic-23-min.jpg",
+    "tourfa-tbilisi-pic-24-min.jpg",
+    "tourfa-tbilisi-pic-26-min.jpg",
+    "tourfa-tbilisi-pic-27-min.jpg",
+    "tourfa-tbilisi-pic-28-min.jpg",
+    "tourfa-tbilisi-pic-29-min.jpg",
+    "tourfa-tbilisi-pic-30-min.jpg",
 ]
 
 </script>
@@ -100,7 +100,7 @@ const displayRooms = [
 
 .gallery-hero {
     margin-bottom: 50px;
-    background: url("../assets/images/სასტუმროს-ახალი-ფოტოები/IMG_8253-min.png") no-repeat center center/cover;
+    background: url("IMG_8253-min.jpg") no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -138,6 +138,8 @@ const displayRooms = [
 
 .image-gallery img {
     width: 350px;
+    height: 250px;
+    object-fit: cover;
     margin: 10px 8px;
     cursor: pointer;
 }

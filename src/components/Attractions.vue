@@ -19,7 +19,7 @@ function getClickedAttraction(item) {
 const attractionList = [
     {
         title: "Museum of History of Georgian Jews ",
-        img: "../assets/images/ადგილები/ქართულ-ებრაული-მუზეუმი.jpg",
+        img: "ქართულ-ებრაული-მუზეუმი.jpg",
         name: "Museum of History of Georgian Jews ",
         description: `The Museum is situated in the old side of Tbilisi.The building of the Museum, which beautifies Old
                         Tbilisi, erected in place of the former synagogue constructed in 1914 year.
@@ -39,7 +39,7 @@ const attractionList = [
     },
     {
         title: "Rezo Gabriadze Marionette Theatre",
-        img: "../assets/images/ადგილები/რეზო-გაბრიაძის-თეატრი.jpg",
+        img: "რეზო-გაბრიაძის-თეატრი.jpg",
         description: `The theater was founded in 1981 by the Georgian director Rezo Gabriadze, and there is an inscription in gold on the building: “Extra Cepam Nihil Cogito Nos Lacrimare” (“Let our tears come only when cutting onions”).
 
 The life of the theater begins with a story of eternal love - the first marionette show, called “Afred and Violetta”, can still be seen to this day. It is an artistic reimagining of Alexandre Dumas’ “La Dame aux Camelias” by Gabriadze.`,
@@ -63,7 +63,7 @@ The life of the theater begins with a story of eternal love - the first marionet
     },
     {
         title: "Abanotubani",
-        img: "../assets/images/ადგილები/გოგირდის-აბანო.jpg",
+        img: "გოგირდის-აბანო.jpg",
         description: `Abanotubani (Georgian: აბანოთუბანი, literally "bath district") is the ancient district of Tbilisi,
                         Georgia, known for its sulphuric baths. 
                         
@@ -97,7 +97,7 @@ The life of the theater begins with a story of eternal love - the first marionet
     },
     {
         title: "Opera and Ballet Theater of Tbilisi",
-        img: "../assets/images/ადგილები/ოპერა.jpg",
+        img: "ოპერა.jpg",
         description: "The Georgian National Opera and Ballet Theater of Tbilisi, formerly known as the Tiflis Imperial Theater, is an opera house situated on Rustaveli Avenue in Tbilisi, Georgia. Founded in 1851, Tbilisi Opera is the main opera house of Georgia and one of the oldest such establishments in Eastern Europe.",
         fullDescription: {
             firstPart: "Opera and Ballet Theater of Tbilisi – In 1896 on the Golovin Prospect (now Rustaveli Avenue) the construction of the new Opera House, designed by the architect Victor Schröter, was finished. The new building was calculated to have a seating capacity of 1200 (the present building of the Opera Theatre). This so called Treasury Theatre was opened on November 3, 1896 with Glinka’s opera A Life for the Tzar.",
@@ -120,7 +120,7 @@ The life of the theater begins with a story of eternal love - the first marionet
     },
     {
         title: "The Great Synagogue",
-        img: "src/assets/images/ადგილები/დიდი-სინაგოგა.jpg",
+        img: "დიდი-სინაგოგა.jpg",
         description: `The red-brick, two-story building of the Great Synagogue faces Jerusalem (south) according to Jewish tradition.
                     In 2009, the building was reconstructed. The restored synagogue consists of prayer and celebration halls, as well as the traditional women's gallery.
                     In the center of the prayer hall is the "Teba" where the praying rabbi stands during prayer, and on the opposite side of the entrance is the almost-150-year-old Aron-Hakodesh, the place where the Torah  is kept.
@@ -133,7 +133,7 @@ The life of the theater begins with a story of eternal love - the first marionet
     },
     {
         title: "Bridge of Peace",
-        img: "../assets/images/ადგილები/მშვიდობის-ხიდი.jpg",
+        img: "მშვიდობის-ხიდი.jpg",
         description: "The Bridge of Peace is a bow-shaped pedestrian bridge, a steel and glass construction illuminated with numerous LEDs, over the Kura River, linking the Rike Park with Old town in central Tbilisi.",
         fullDescription: {
             firstPart: "The Peace Bridge is located on the Mtkvari River in Tbilisi, between the Metekhi and Baratashvili Bridges. It connects Erekle II Street and Rike. The Peace Bridge has become one of the symbols of renewed Tbilisi. It was officially opened on May 6, 2010. The architect of the bridge is Michele de Luca (he is also the architect of the MIA building and the Presidential Palace), and the lighting designer is Philippe Martino (he owns the lighting design for the MIA building, the Presidential Palace and the TV tower). This glass bridge is especially beautiful at night when the lights are reflected in the water. Near the Peace Bridge is Rike Park, which is well-appointed, with amusement parks and perfect for walking and unwinding. From here you can also visit the Narikala by cable car and enjoy the wonderful views of the city from above. Narikala Fortress, Tbilisi Tower and the Presidential Palace are perfectly visible from the bridge. The Peace Bridge is one of the most popular places in Tbilisi. The modern design bridge brings eclecticism to the environment of old Tbilisi. ",
@@ -206,7 +206,7 @@ The life of the theater begins with a story of eternal love - the first marionet
                                             <li>{{ clickedAttractionFullDescription.placeWithAttendenceFee.generalInformation.listItem7 }}</li>
                                         </ol>
                                     </div>
-                                    <iframe :src="clickedAttractionMapSrc" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <iframe class="map" :src="clickedAttractionMapSrc" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                                 <div class="close-icon" @click="visible = false">
                                     <img src="../assets/icons/xmark-solid.svg" alt="">
@@ -231,7 +231,7 @@ The life of the theater begins with a story of eternal love - the first marionet
 
 .attractions-hero {
     height: 100vh;
-    background: url(../assets/images/ადგილები/თბილისი-ღამე.png) no-repeat center center/cover;
+    background: url(თბილისი-ღამე.png) no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -391,6 +391,9 @@ The life of the theater begins with a story of eternal love - the first marionet
     font-size: 18px;
     font-weight: 500;
     padding-left: 35px;
+}
+.map{
+    margin-top: 50px;
 }
 .place-with-history-wrapper{
     padding: 0 20px;
