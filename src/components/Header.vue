@@ -27,7 +27,7 @@
                 <router-link to="/attractions"
                     :style="{ color: scrollValue > 4 ? 'black' : 'white', 'pointer-events': router.currentRoute.value.path === '/attractions' ? 'none' : 'auto' }"
                     :class="{ 'menu-item': true, 'active': router.currentRoute.value.path === '/attractions' }">
-                    <img :style="[{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: hover && menu_id == 8 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' },{ filter: router.currentRoute.value.path === '/attractions' ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : hover && menu_id == 8 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }]"
+                    <img :style="[{ filter: scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: hover && menu_id == 8 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }, { filter: router.currentRoute.value.path === '/attractions' ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : scrollValue > 4 ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)' : hover && menu_id == 8 ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)' : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)' }]"
                         class="menu-icon" src="city-solid.svg" alt="">
                     <p class="menu-text">attractions</p>
                 </router-link>
@@ -75,51 +75,44 @@
                 </div>
             </div>
         </div>
-        <img @click="triggerBurgerMenu" class="burger-menu" src="../assets/icons/bars-solid.svg" alt=""
+        <img @click="triggerBurgerMenu" class="burger-menu" src="bars-solid.svg" alt=""
             v-if="pageWidth < 900 && !burgerMenuClicked">
         <img v-if="pageWidth < 900 && burgerMenuClicked" @click="triggerBurgerMenu" class="close-burger-menu"
             src="../assets/icons/xmark-solid.svg" alt="">
         <div v-if="burgerMenuClicked" class="opened-mobile-menu">
             <div class="mobile-menu-item">
-                <img class="mobile-menu-img" src="../assets/icons/house-solid.svg" alt="">
+                <img class="mobile-menu-img" src="house-solid.svg" alt="">
                 <p class="mobile-menu-text">Home</p>
             </div>
+
             <div class="mobile-menu-item">
-                <img class="mobile-menu-img" src="../assets/icons/hotel-solid.svg" alt="">
-                <p class="mobile-menu-text">Services</p>
-            </div>
-            <div class="mobile-menu-item">
-                <img class="mobile-menu-img" src="../assets/icons/bell-concierge-solid.svg" alt="">
+                <img class="mobile-menu-img" src="bell-concierge-solid.svg" alt="">
                 <p class="mobile-menu-text">Kosher Menu</p>
             </div>
+
             <div class="mobile-menu-item">
-                <img class="mobile-menu-img" src="../assets/icons/phone-solid.svg" alt="">
-                <p class="mobile-menu-text">Contact</p>
-            </div>
-            <div class="mobile-menu-item">
-                <img class="mobile-menu-img" src="../assets/icons/address-card-solid.svg" alt="">
+                <img class="mobile-menu-img" src="address-card-solid.svg" alt="">
                 <p class="mobile-menu-text">About</p>
             </div>
             <div class="mobile-menu-item">
-                <img class="mobile-menu-img" src="../assets/icons/gallery.svg" alt="">
+                <img class="mobile-menu-img" src="gallery.svg" alt="">
                 <p class="mobile-menu-text">Gallery</p>
             </div>
             <div class="mobile-menu-item">
-                <img class="mobile-menu-img" src="../assets/icons/bed-solid.svg" alt="">
+                <img class="mobile-menu-img" src="bed-solid.svg" alt="">
                 <p class="mobile-menu-text">Rooms</p>
             </div>
             <div class="mobile-menu-item">
-                <img class="mobile-menu-img" src="../assets/icons/city-solid.svg" alt="">
+                <img class="mobile-menu-img" src="city-solid.svg" alt="">
                 <p class="mobile-menu-text">Attractions</p>
             </div>
         </div>
-
     </div>
 </template>
 <script setup>
 import { BxSolidDownArrow } from "@kalimahapps/vue-icons";
 import { BxSolidUpArrow } from "@kalimahapps/vue-icons";
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, ref } from 'vue';
 import store from '../store/store'
 import { computed } from '@vue/reactivity';
 import { useRouter } from "vue-router";
