@@ -209,7 +209,7 @@ The life of the theater begins with a story of eternal love - the first marionet
                                     <iframe class="map" :src="clickedAttractionMapSrc" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                                 <div class="close-icon" @click="visible = false">
-                                    <img src="../assets/icons/xmark-solid.svg" alt="">
+                                    <img src="/xmark-solid.svg" alt="">
                                 </div>
                             </div>
                         </template>
@@ -231,7 +231,7 @@ The life of the theater begins with a story of eternal love - the first marionet
 
 .attractions-hero {
     height: 100vh;
-    background: url(თბილისი-ღამე.png) no-repeat center center/cover;
+    background: url(თბილისი-ღამე-min.jpg) no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;

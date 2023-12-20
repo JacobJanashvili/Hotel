@@ -4,36 +4,36 @@
     <footer>
         <div class="footer-wrapper">
             <div class="copyright_and_logo">
-                <img class="footer-wrapper-logo" src="logo.svg" alt="">
+                <img class="footer-wrapper-logo" src="/logo.svg" alt="">
                 <p>All rights reserved &copy; 2023</p>
             </div>
             <div class="header-items">
                 <div class="item-list">
                     <div class="item">
                         <p class="item-title">Kosher Menu</p>
-                        <img class="item-icon" src="chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
                     <div class="item">
                         <p class="item-title">Rooms</p>
-                        <img class="item-icon" src="chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
                     <div class="item">
                         <p class="item-title">Gallery</p>
-                        <img class="item-icon" src="chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
                 </div>
                 <div class="item-list">
                     <div class="item">
                         <p class="item-title">Home</p>
-                        <img class="item-icon" src="chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
                     <div class="item">
                         <p class="item-title">About</p>
-                        <img class="item-icon" src="chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
                     <div class="item">
                         <p class="item-title">Attractions</p>
-                        <img class="item-icon" src="chevron-right-solid.svg" alt="">
+                        <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
                 </div>
                 <div class="footer-contact-menu">

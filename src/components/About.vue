@@ -1,6 +1,6 @@
 <script setup>
 import Footer from './Footer.vue';
-import Header from './header.vue';
+import Header from './Header.vue';
 
 </script>
 <template>
@@ -26,7 +26,7 @@ import Header from './header.vue';
             <h2 class="about-us-rooms-title">Our Rooms</h2>
             <div class="about-us-room">
                 <img class="about-us-room-img"
-                    src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-10-min.png" alt="">
+                    src="/tourfa-tbilisi-pic-10-min.jpg" alt="">
                 <div class="text-div">
                     <h2>Standard</h2>
                     <div class="text">
@@ -37,12 +37,12 @@ import Header from './header.vue';
                 </div>
                 <div class="about-us-rooms-link">
                     <p>View</p>
-                    <img src="../assets/icons/long-arrow-right.png" alt="">
+                    <img src="/long-arrow-right.jpg" alt="">
                 </div>
             </div>
             <div class="about-us-room">
                 <img class="about-us-room-img"
-                    src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-11-min.png" alt="">
+                    src="/tourfa-tbilisi-pic-11-min.jpg" alt="">
                 <div class="text-div">
                     <h2>Family</h2>
                     <div class="text">
@@ -54,13 +54,13 @@ import Header from './header.vue';
                 </div>
                 <div class="about-us-rooms-link">
                     <p>View</p>
-                    <img src="../assets/icons/long-arrow-right.png" alt="">
+                    <img src="/long-arrow-right.jpg" alt="">
                 </div>
 
             </div>
             <div class="about-us-room">
                 <img class="about-us-room-img"
-                    src="../assets/images/სასტუმროს-ფოტოები/ოთახები/tourfa-tbilisi-pic-13-min.png" alt="">
+                    src="/tourfa-tbilisi-pic-13-min.jpg" alt="">
                 <div class="text-div">
                     <h2>Deluxe</h2>
                     <div class="text">
@@ -71,7 +71,7 @@ import Header from './header.vue';
                 </div>
                 <div class="about-us-rooms-link">
                     <p>View</p>
-                    <img src="../assets/icons/long-arrow-right.png" alt="">
+                    <img src="/long-arrow-right.jpg" alt="">
                 </div>
             </div>
 
@@ -95,7 +95,7 @@ import Header from './header.vue';
 
 .about-us-hero {
     margin-bottom: 50px;
-    background: url("../assets/images/სასტუმროს-ახალი-ფოტოები/IMG_8245-min.png") no-repeat center center/cover;
+    background: url("IMG_8245-min-min.jpg") no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
