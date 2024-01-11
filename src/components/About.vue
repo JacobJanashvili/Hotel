@@ -227,7 +227,7 @@ a {
 
 .about-us-hero {
     margin-bottom: 50px;
-    background: url("IMG_8245-min-min.jpg") no-repeat center center/cover;
+    background: url("/IMG_8245-min-min.jpg") no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
