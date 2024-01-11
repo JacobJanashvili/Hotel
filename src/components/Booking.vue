@@ -55,8 +55,8 @@ const formValidate = () => {
             <div class="booking-calendar-wrapper">
                 <div class="booking-calendar p-float-label card">
                     <Calendar v-model="checkInDate" inputId="check-in" @date-select="checkInDateValid = true"
-                        :min-date="currentDate" v-on:clear-click="checkInDateValid = false" show-button-bar :manualInput="false"
-                        class="calendar-dropdown"
+                        :min-date="currentDate" v-on:clear-click="checkInDateValid = false" show-button-bar
+                        :manualInput="false" class="calendar-dropdown"
                         :class="{ 'error-dropdown': submitButtonClicked && !checkInDateValid, 'success-dropdown': checkInDateValid }" />
                     <label for="check-in">Check-in Date</label>
                     <div v-if="submitButtonClicked && !checkInDateValid">
@@ -144,6 +144,10 @@ const formValidate = () => {
     margin: 0 5px;
 }
 
+.occupancy-wrapper {
+    display: flex;
+}
+
 .p-button {
     margin-top: 30px;
     padding: 10px 25px;
@@ -181,10 +185,8 @@ const formValidate = () => {
     .booking-calendar {
         margin: 20px 10px;
     }
-    .occupancy-wrapper{
-        display: flex;
-    }
-    .p-button{
+
+    .p-button {
         width: 90vw;
         margin-left: 10px;
     }
