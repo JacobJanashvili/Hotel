@@ -12,19 +12,21 @@
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-@font-face {
-    font-family: 'VAG Rounded';
-    src: url(../assets/fonts/VAGRoundedRegular.ttf);
+* {
+    font-family: 'Montserrat', sans-serif;
 }
+
+
 
 
 
 .hero-wrapper {
     height: 100vh;
-    background: url(../assets/images/სასტუმროს-ფოტოები/main-background-min.jpg) no-repeat center center/cover;
+    background: url(/main-background-min.jpg) no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .hero-wrapper::before {
@@ -81,9 +83,10 @@
 
 @media (max-width: 900px) and (min-width: 100px) {
 
-    .hero-subwrapper p{
+    .hero-subwrapper p {
         font-size: 17px;
     }
+
     .hero-subwrapper {
         text-align: center;
     }
@@ -91,4 +94,5 @@
     .hero-subwrapper h1 {
         font-size: 28px;
     }
-}</style>
+}
+</style>

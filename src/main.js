@@ -1,7 +1,7 @@
-import { createApp } from 'vue'
-import router from './router'
 import './style.css'
 import 'viewerjs/dist/viewer.css'
+import { createApp } from 'vue'
+import router from './router'
 import App from './App.vue'
 import VueViewer from 'v-viewer'
 import PrimeVue from 'primevue/config';

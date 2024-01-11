@@ -17,6 +17,7 @@
     "@headlessui/vue": "^1.7.16",
     "@kalimahapps/vue-icons": "^1.4.0",
     "@splidejs/vue-splide": "^0.6.12",
+    "@vectopus/atlas-icons-vue": "^0.0.5",
     "axios": "^1.6.1",
     "primevue": "^3.41.1",
     "v-img": "^0.2.0",
@@ -27,8 +28,8 @@
     "vue-lazyload": "^3.0.0",
     "vue-router": "^4.2.5",
     "vue-silentbox": "^3.0.4",
-    "vue3-carousel": "^0.3.1",
     "vuejs-image-gallery": "^0.1.6",
+    "vueperslides": "^3.5.1",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

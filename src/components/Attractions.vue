@@ -1,8 +1,10 @@
 <script setup>
-import { ref } from 'vue';
+import { defineAsyncComponent, ref } from 'vue';
 import Footer from './Footer.vue';
 import Header from './Header.vue';
-import Dialog from 'primevue/dialog';
+const Dialog = defineAsyncComponent({
+    loader: ()=> import('primevue/dialog')
+})
 const visible = ref(false)
 const clcikedAttractionTitle = ref('')
 const clickedAttractionFullDescription = ref({})
@@ -158,7 +160,7 @@ The life of the theater begins with a story of eternal love - the first marionet
                     <p>{{ attraction.description }}</p>
                     <div class="attractions-link" @click="visible = !visible, getClickedAttraction(attraction)">
                         <p id="attraction-link-title">Learn More</p>
-                        <img id="attraction-arrow-link" src="../assets/icons/long-arrow-right.png " alt="">
+                        <img id="attraction-arrow-link" src="/long-arrow-right.jpg" alt="">
                     </div>
                     <Dialog v-model:visible="visible" :modal="true" closable="true" dismissableMask="true">
                         <template #container>
@@ -231,7 +233,7 @@ The life of the theater begins with a story of eternal love - the first marionet
 
 .attractions-hero {
     height: 100vh;
-    background: url(თბილისი-ღამე-min.jpg) no-repeat center center/cover;
+    background: url(თბილისი-ღამე.jpg) no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -324,14 +326,12 @@ The life of the theater begins with a story of eternal love - the first marionet
     border-radius: 0 0 6px 6px;
     position: relative;
     overflow-y: scroll;
-
 }
 
 .header-img {
     width: 100%;
     height: 50vh;
     object-fit: cover;
-
     filter: brightness(0.60)
 }
 

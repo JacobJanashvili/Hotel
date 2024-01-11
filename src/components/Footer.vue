@@ -9,29 +9,29 @@
             </div>
             <div class="header-items">
                 <div class="item-list">
-                    <div class="item">
+                    <div class="item" @click="$router.push('/kosher')">
                         <p class="item-title">Kosher Menu</p>
                         <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
-                    <div class="item">
+                    <div class="item" @click="$router.push('/rooms')">
                         <p class="item-title">Rooms</p>
                         <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
-                    <div class="item">
+                    <div class="item" @click="$router.push('/gallery')">
                         <p class="item-title">Gallery</p>
                         <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
                 </div>
                 <div class="item-list">
-                    <div class="item">
+                    <div class="item" @click="$router.push('/')">
                         <p class="item-title">Home</p>
                         <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
-                    <div class="item">
+                    <div class="item" @click="$router.push('/about')">
                         <p class="item-title">About</p>
                         <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
-                    <div class="item">
+                    <div class="item" @click="$router.push('/attractions')">
                         <p class="item-title">Attractions</p>
                         <img class="item-icon" src="/chevron-right-solid.svg" alt="">
                     </div>
@@ -52,10 +52,6 @@
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-@font-face {
-    font-family: 'VAG Rounded';
-    src: url(../assets/fonts/VAGRoundedRegular.ttf);
-}
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -92,21 +88,10 @@ footer {
     width: 100%;
     height: 150px;
     background: black;
-    border-radius: 8px;
 
 }
 
-footer::before {
-    content: "";
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(28, 0, 151, 0.062), rgba(0, 0, 0, 1)), url(../assets/images/Tbilisi.jpg) no-repeat center center;
-    z-index: 0;
-}
+
 
 .footer-wrapper {
     display: flex;
@@ -163,16 +148,18 @@ footer::before {
         height: 100vh;
     }
 
-    .footer-contact-menu{
+    .footer-contact-menu {
         text-align: center;
         padding-left: 15px;
         padding-top: 10px;
     }
-    .footer-location-menu{
+
+    .footer-location-menu {
         text-align: center;
         padding-top: 20px;
         padding-left: 15px;
     }
+
     .footer-wrapper {
         flex-direction: column;
         padding: 35vw 0;
