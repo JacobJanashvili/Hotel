@@ -1,5 +1,8 @@
 <script setup>
-import { defineAsyncComponent, ref } from 'vue';
+import { defineAsyncComponent } from 'vue';
+import { useRouter } from 'vue-router'
+import store from '../store/store';
+const router = useRouter()
 import Button from 'primevue/button';
 const Header = defineAsyncComponent({
     loader: () => import('./Header.vue')
@@ -7,6 +10,9 @@ const Header = defineAsyncComponent({
 const Footer = defineAsyncComponent({
     loader: () => import('./Footer.vue')
 })
+function goBack(){
+    console.log(router.currentRoute.value)
+}
 </script>
 <template>
     <Header />
@@ -17,7 +23,7 @@ const Footer = defineAsyncComponent({
         </div>
         <p class="not-found-apology">We're sorry the page you are looking for does not exist in our website</p>
         <div class="rerouting">
-            <Button label="Go back" link @click="$router.back()" />
+            <Button label="Go back" link @click="$router.back(), goBack()" />
             <Button outlined class="border-2" @click="$router.push('/')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
                     <path fill="currentColor"
@@ -62,17 +68,21 @@ const Footer = defineAsyncComponent({
     font-size: 20px;
     margin-top: 5px;
 }
-.rerouting{
+
+.rerouting {
     margin-top: 25px;
 }
-.rerouting-btn-text{
+
+.rerouting-btn-text {
     margin-left: 5px;
 }
+
 @media (max-width: 900px) and (min-width: 100px) {
-    .not-found-wrapper{
+    .not-found-wrapper {
         margin: 50% 5%;
     }
-    .rerouting{
+
+    .rerouting {
         margin-top: 15px;
     }
 }

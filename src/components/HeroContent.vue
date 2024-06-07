@@ -22,7 +22,7 @@
 
 .hero-wrapper {
     height: 100vh;
-    background: url(/main-background-min.jpg) no-repeat center center/cover;
+    background: url(/main-background-img.jpg) no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,10 +81,10 @@
     z-index: 1;
 }
 
-@media (max-width: 900px) and (min-width: 100px) {
+@media (max-width: 912px) and (min-width: 100px) {
 
     .hero-subwrapper p {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .hero-subwrapper {
@@ -92,7 +92,7 @@
     }
 
     .hero-subwrapper h1 {
-        font-size: 28px;
+        font-size: 20px;
     }
 }
 </style>

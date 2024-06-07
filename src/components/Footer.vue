@@ -87,7 +87,8 @@ footer {
     position: relative;
     width: 100%;
     height: 150px;
-    background: black;
+    margin-top: 10dvh;
+    background: rgba(0, 0, 0, 0.918);
 
 }
 
@@ -139,13 +140,13 @@ footer {
     padding-bottom: 5px;
 }
 
-@media (max-width: 900px) and (min-width: 100px) {
+@media (max-width: 912px) and (min-width: 100px) {
     .copyright_and_logo {
         text-align: center;
     }
 
     footer {
-        height: 100vh;
+        height: 50%;
     }
 
     .footer-contact-menu {
@@ -162,9 +163,9 @@ footer {
 
     .footer-wrapper {
         flex-direction: column;
-        padding: 35vw 0;
+        padding: 5% 0;
         align-items: inherit;
-        height: 100vh;
+        height: 100%;
     }
 
     .header-items {

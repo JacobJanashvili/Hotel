@@ -5,10 +5,10 @@ const kosherFoodContent = [
     {
         title: "Khinkali",
         img: "khinkali.jpg",
-        firstPart: "These delicious Georgian dumplings known as khinkali are considered to be one of the national dishes of the country. The dumplings are filled with meat and spices, then traditionally twisted into a knot at the top. Regional differences influence the fillings and every part of Georgia has their distinctive variety.",
-        secondPart: "For example, in the mountainous regions, the most traditional filling is lamb, however; the most frequent variety throughout entire Georgia is a mixture of pork and beef. The vegetarian versions made with traditional Imeretian cheese or mushrooms are also quite popular.",
-        thirdPart: "The traditional recipe was developed over time, and now includes fresh herbs such as cilantro or parsley. The meat for khinkali is never precooked – therefore, all of the juices are tucked inside the dumplings. Eating khinkali is also a part of traditional Georgian folklore: the top, where the dough is twisted into a knot, should never be eaten because it serves as a handle to hold the dumpling, and it is usually left on the plate as an indication of how many dumplings have been eaten.",
-        fourthPart: "These flavorful dumplings are served plain or paired with freshly ground black pepper."
+        firstPart: "These dumplings, which can be filled with meat or cheese, are one of the most popular dishes in the country of Georgia or ",
+        secondPart: "Sakartvelo. They were also one of our favorites when we were lucky enough to visit the country a few years ago. Traditionally, the",
+        thirdPart: "dumplings are eaten by hand, holding the top knot of the pleat. The knot is then left on the plate, so the restaurant can count them",
+        fourthPart: "and know for how many dumplings to charge you. This recipe uses ground beef, but you may substitute ground pork or lamb, or with crumbly farm cheese."
     },
     {
         title: "Kharcho",
@@ -72,7 +72,7 @@ const kosherFoodContent = [
 
 .kosher-hero-wrapper {
     background: url(/kosher-hero.jpg) no-repeat center center/cover;
-    height: 100vh;
+    height: 90vh;
     color: white;
     z-index: 0;
     display: flex;
@@ -100,12 +100,25 @@ const kosherFoodContent = [
 }
 
 .kosher-menu-wrapper-title {
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.kosher-menu-wrapper-title::after {
+    content: '';
+    width: 40%;
+    height: 2px;
+    background-color: #1E90FF;
+    display: block;
+    margin-top: 10px;
 }
 
 .kosher-menu-img {
-    width: 100%;
+    width: 800px;
     object-fit: cover;
+    object-position: 50% 100%;
     border-radius: 5px 0 0 5px;
 }
 
@@ -183,4 +196,5 @@ const kosherFoodContent = [
     .text-div {
         padding-bottom: 30px;
     }
-}</style>
+}
+</style>

@@ -408,7 +408,7 @@ The life of the theater begins with a story of eternal love - the first marionet
     text-align: justify;
 }
 
-@media (max-width: 900px) and (min-width: 100px) {
+@media (max-width: 912px) and (min-width: 100px) {
     .clicked-attraction {
         width: 95vw;
     }
@@ -419,5 +419,11 @@ The life of the theater begins with a story of eternal love - the first marionet
 
     .header-title {
         font-size: 22px;
+    }
+    .attractions-wrapper h2{
+        font-size: 17px
+    }
+    .attractions-wrapper p{
+        font-size: 14px
     }
 }</style>

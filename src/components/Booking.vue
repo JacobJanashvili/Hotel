@@ -26,6 +26,7 @@ const valid = ref(false)
 const submitButtonClicked = ref(false)
 const currentDate = new Date()
 const tomorrow = new Date(currentDate)
+const selectedNextDay = ref("")
 tomorrow.setDate(currentDate.getDate() + 1)
 const formValidate = () => {
     if (valid.value === true) {
@@ -54,7 +55,7 @@ const formValidate = () => {
             <h1>Book your fantastic stay with us</h1>
             <div class="booking-calendar-wrapper">
                 <div class="booking-calendar p-float-label card">
-                    <Calendar v-model="checkInDate" inputId="check-in" @date-select="checkInDateValid = true"
+                    <Calendar v-model="checkInDate" inputId="check-in" @date-select="checkInDateValid = true, selectedNextDay = new Date(checkInDate), selectedNextDay.setDate(checkInDate.getDate + 1)"
                         :min-date="currentDate" v-on:clear-click="checkInDateValid = false" show-button-bar
                         :manualInput="false" class="calendar-dropdown"
                         :class="{ 'error-dropdown': submitButtonClicked && !checkInDateValid, 'success-dropdown': checkInDateValid }" />

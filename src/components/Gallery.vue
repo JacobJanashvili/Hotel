@@ -5,21 +5,13 @@ import TabPanel from 'primevue/tabpanel';
 import Footer from './Footer.vue';
 
 const displayAllPhotos = [
-    "tourfa-tbilisi-pic-2-min.jpg",
-    "DSC074411637458731343.jpg",
-    "IMG_8247-min.jpg",
-    "tourfa-tbilisi-pic-3-min.jpg",
-    "tourfa-tbilisi-pic-4-min.jpg",
-    "tourfa-tbilisi-pic-5-min.jpg",
-    "tourfa-tbilisi-pic-6-min.jpg",
-    "tourfa-tbilisi-pic-10-min.jpg",
-    "tourfa-tbilisi-pic-11-min.jpg",
-    "tourfa-tbilisi-pic-13-min.jpg",
-    "tourfa-tbilisi-pic-15-min.jpg",
-    "tourfa-tbilisi-pic-16-min.jpg",
-    "tourfa-tbilisi-pic-17-min.jpg",
-    "tourfa-tbilisi-pic-18-min.jpg",
-    "tourfa-tbilisi-pic-21-min.jpg",
+    "hotel-main-view.jpg",
+    "hotel-sideview.jpg",
+    "hotel-sideview-2.jpg",
+    "hotel-sideview-3.jpg",
+    "new-room-photo.jpg",
+    "new-room-photo-2.jpg",
+    "new-room-photo-3.jpg",
     "tourfa-tbilisi-pic-22-min.jpg",
     "tourfa-tbilisi-pic-23-min.jpg",
     "tourfa-tbilisi-pic-24-min.jpg",
@@ -29,7 +21,6 @@ const displayAllPhotos = [
     "tourfa-tbilisi-pic-29-min.jpg",
     "tourfa-tbilisi-pic-30-min.jpg",
     "tourfa-tbilisi-pic-7-min.jpg",
-    "tourfa-tbilisi-pic-2-min.jpg",
     "tourfa-tbilisi-pic-19-min.jpg",
     "tourfa-tbilisi-pic-14-min.jpg"
 ]
@@ -100,7 +91,7 @@ const displayRooms = [
 
 .gallery-hero {
     margin-bottom: 50px;
-    background: url("IMG_8253-min.jpg") no-repeat center center/cover;
+    background: url("/gallery-background-img.jpg") no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;

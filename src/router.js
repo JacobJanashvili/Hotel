@@ -26,9 +26,10 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes,
 });
-router.beforeEach((to) => {
+router.beforeEach((to,from) => {
     if (to.name == 'BookingConfirmed' && !store.state.isBookingConfirmed) {
         return { name: 'Booking' }
     }
+    
 })
 export default router;

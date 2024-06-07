@@ -416,7 +416,7 @@ a {
   text-align: center;
 }
 
-@media (max-width: 900px) and (min-width: 100px) {
+@media (max-width: 912px) and (min-width: 100px) {
   .room-opened-container {
     width: 90vw;
     overflow-y: scroll;
