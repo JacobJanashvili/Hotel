@@ -116,7 +116,7 @@ const kosherFoodContent = [
 }
 
 .kosher-menu-img {
-    width: 800px;
+    width: 50%;
     object-fit: cover;
     object-position: 50% 100%;
     border-radius: 5px 0 0 5px;
@@ -175,20 +175,28 @@ const kosherFoodContent = [
     margin: 25px 0;
 }
 
-@media (max-width: 900px) and (min-width: 100px) {
+@media (max-width: 912px) and (min-width: 100px) {
     .kosher-menu {
         flex-direction: column;
     }
-
+    .kosher-menu-img{
+        width: 100%;
+    }
     .kosher-menu-wrapper-title {
-        font-size: 25px;
+        font-size: 18px;
+        text-align: center;
     }
 
     .kosher-menu-download-wrapper {
         width: 100vw;
         border-radius: 0;
     }
-
+    .kosher-hero-wrapper h1{
+        font-size: 22px;
+    }
+    .kosher-menu .text{
+        font-size: 14px;
+    }
     .text-div h2 {
         font-size: 22px;
     }
