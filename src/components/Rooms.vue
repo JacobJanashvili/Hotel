@@ -295,7 +295,7 @@ const roomsList = [
 }
 
 .rooms-hero-wrapper {
-  background: url("rooms-hero-background.jpg") no-repeat center center/cover;
+  background: url("/rooms-hero-background.jpg") no-repeat center center/cover;
   height: 100vh;
   color: white;
   display: flex;

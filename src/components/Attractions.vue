@@ -233,7 +233,7 @@ The life of the theater begins with a story of eternal love - the first marionet
 
 .attractions-hero {
     height: 100vh;
-    background: url(თბილისი-ღამე.jpg) no-repeat center center/cover;
+    background: url("/თბილისი-ღამე.jpg") no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
