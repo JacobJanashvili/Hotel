@@ -1,1 +1,0 @@
-import{W as n,s as o}from"./index-c1cb43ed.js";const i={__name:"BookingConfirmed",setup(e){return n(()=>{o.commit("setBookingConfirmation")}),console.log(o.state.isBookingConfirmed),(t,r)=>null}};export{i as default};

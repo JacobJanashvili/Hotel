@@ -93,14 +93,14 @@ const roomsList = [
   },
   {
     title: "Deluxe Double Room with extra bed",
-    img: "Double-Room.jpg",
+    img: "Double-Deluxe-Preview.jpg",
     shortDescription:
       "Deluxe is spacious 30 sqm room featuring adjoining individual courtyard; equipped with bathroom, tea & coffee facilities, flat-screen TV and Wi-Fi. It features king size bedroom and two sofas convertible into extra bed. Deluxe room can easily accommodate up to 4 people a ",
     longDescription:
       "Offering free toiletries, this double room includes a private bathroom with a shower, a hairdryer and slippers. The air-conditioned double room offers a flat-screen TV with cable channels, a private entrance, soundproof walls, a tea and coffee maker as well as an inner courtyard view. The unit has 2 beds.",
     roomPreviewSlides: [
-      "Double-Room.jpg",
-      "Double-Room-2.jpg",
+      "Double-Deluxe-Preview.jpg",
+      "Double-Deluxe-Preview-2.jpg",
       "Double-Room-couch.jpg",
       "Double-Room-bathroom.jpg",
       "Double-Room-bathroom-2.jpg",
