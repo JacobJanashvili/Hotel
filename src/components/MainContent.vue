@@ -1,10 +1,7 @@
 <script setup>
-import "primevue/resources/themes/fluent-light/theme.css";
-import "@splidejs/vue-splide/css/skyblue";
-import { computed } from "@vue/reactivity";
+import "@splidejs/splide/css/sea-green";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import store from "../store/store";
-import { defineAsyncComponent, ref } from "vue";
+import { defineAsyncComponent, ref, onMounted,onUnmounted } from "vue";
 import Button from "primevue/button";
 
 const Header = defineAsyncComponent({
@@ -131,6 +128,7 @@ const clickedRoomSlides = ref([]);
 const clickedRoomOccupancy = ref(Number);
 const clickedRoomDimension = ref("");
 const isRoomOpen = ref(false);
+const screenWidth = ref(window.screen.width);
 function onRoomClick(item) {
   clickedRoomTitle.value = item.title;
   clickedRoomDescription.value = item.longDescription;
@@ -148,7 +146,10 @@ function whenAttractionIsOpen(item) {
   clickedAttractionFullDescription.value = item.fullDescription;
   clickedAttractionMapSrc.value = item.mapSrc;
 }
-const pageWidth = computed(() => store.state.pageWidth);
+const updateScreenWidth = () => {
+  screenWidth.value = window.innerWidth;
+};
+
 const carouselData = [
   {
     img: "google-review-N1.png",
@@ -171,6 +172,9 @@ const carouselData = [
     review: `The location is excellent, the rooms are fine, we were there Saturday 8.23 ​​it was nice, close to the Chabad house, the staff is also nice, the manager of the place was very kind.`,
   },
 ];
+onMounted(() =>{
+  window.addEventListener("resize", updateScreenWidth);
+})
 const roomCarouselData = [
   {
     img: "tourfa-tbilisi-pic-4-min.jpg",
@@ -285,15 +289,11 @@ const options = {
   perPage: 1,
   pagination: "true",
   arrows: "true",
+  type: "loop",
 };
 const roomOptions = {
   perPage: 1,
   pagination: "true",
-  breakpoints: {
-    912: {
-      perPage: 1,
-    },
-  },
 };
 </script>
 <template>
@@ -312,7 +312,7 @@ const roomOptions = {
   <div class="rooms-wrapper">
     <div class="rooms-subwrapper">
       <h1>Take a peak at our luxurious rooms</h1>
-      <div class="room-div-wrapper" v-if="pageWidth > 912">
+      <div class="room-div-wrapper" v-if="screenWidth > 912">
         <div class="room" v-for="item in roomCarouselData">
           <img class="room-img" :src="item.img" alt="" />
           <div class="price-wrapper">
@@ -324,7 +324,10 @@ const roomOptions = {
                 <span>/night</span>
               </div>
             </div>
-            <div class="room-link" @click="(isRoomOpen = !isRoomOpen), onRoomClick(item)">
+            <div
+              class="room-link"
+              @click="(isRoomOpen = !isRoomOpen), onRoomClick(item)"
+            >
               <p>View</p>
               <svg
                 version="1.1"
@@ -335,8 +338,8 @@ const roomOptions = {
                 xml:space="preserve"
                 width="50px"
                 height="50px"
-                fill="#1E90FF"
-                stroke="#1E90FF"
+                fill="#059669"
+                stroke="#059669"
                 transform="rotate(0)"
               >
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -351,7 +354,7 @@ const roomOptions = {
                   <line
                     style="
                       fill: none;
-                      stroke: #1e90ff;
+                      stroke: #059669;
                       stroke-width: 0.992;
                       stroke-miterlimit: 10;
                     "
@@ -363,7 +366,7 @@ const roomOptions = {
                   <polyline
                     style="
                       fill: none;
-                      stroke: #1e90ff;
+                      stroke: #059669;
                       stroke-width: 0.992;
                       stroke-miterlimit: 10;
                     "
@@ -377,11 +380,14 @@ const roomOptions = {
             v-model:visible="isRoomOpen"
             :modal="true"
             dismissableMask="true"
+            :pt="{
+              root: { style: 'border: 0' },
+            }"
           >
             <template #container>
               <div class="room-opened-container">
                 <div class="room-wrapper">
-                  <Splide :options="options" class="splide--dynamic">
+                  <Splide :options="roomOptions" class="splide--dynamic">
                     <SplideSlide v-for="slide in clickedRoomSlides">
                       <img class="room-opened-slide-img" :src="slide" alt="" />
                     </SplideSlide>
@@ -487,12 +493,12 @@ const roomOptions = {
                 </div>
                 <img
                   @click="isRoomOpen = !isRoomOpen"
-                  v-if="pageWidth > 912"
+                  v-if="screenWidth > 912"
                   class="close-icon"
                   src="/xmark-solid.svg"
                   alt=""
                 />
-                <div v-if="pageWidth < 912" class="mobile-close-menu">
+                <div v-if="screenWidth < 912" class="mobile-close-menu">
                   <img
                     @click="isRoomOpen = !isRoomOpen"
                     class="close-icon"
@@ -505,7 +511,7 @@ const roomOptions = {
           </Dialog>
         </div>
       </div>
-      <Splide v-if="pageWidth < 912" :options="roomOptions">
+      <Splide v-if="screenWidth < 912" :options="roomOptions">
         <SplideSlide v-for="slide in roomCarouselData">
           <div class="room">
             <img class="room-img" :src="slide.img" alt="" />
@@ -548,7 +554,7 @@ const roomOptions = {
                     <line
                       style="
                         fill: none;
-                        stroke: #1e90ff;
+                        stroke: #059669;
                         stroke-width: 0.992;
                         stroke-miterlimit: 10;
                       "
@@ -560,7 +566,7 @@ const roomOptions = {
                     <polyline
                       style="
                         fill: none;
-                        stroke: #1e90ff;
+                        stroke: #059669;
                         stroke-width: 0.992;
                         stroke-miterlimit: 10;
                       "
@@ -572,6 +578,7 @@ const roomOptions = {
             </div>
           </div>
           <Dialog
+            v-if="isRoomOpen"
             v-model:visible="isRoomOpen"
             :modal="true"
             dismissableMask="true"
@@ -579,9 +586,13 @@ const roomOptions = {
             <template #container>
               <div class="room-opened-container">
                 <div class="room-wrapper">
-                  <Splide :options="options" class="splide--dynamic">
+                  <Splide :options="roomOptions" class="splide--dynamic">
                     <SplideSlide v-for="slide in clickedRoomSlides">
-                      <img class="room-opened-slide-img" :src="slide" alt="" />
+                      <img
+                        class="room-opened-slide-img"
+                        :src="slide"
+                        alt=""
+                      />
                     </SplideSlide>
                   </Splide>
                   <h2 class="room-title">{{ clickedRoomTitle }}</h2>
@@ -684,12 +695,12 @@ const roomOptions = {
                 </div>
                 <img
                   @click="isRoomOpen = !isRoomOpen"
-                  v-if="pageWidth > 912"
+                  v-if="screenWidth > 912"
                   class="close-icon"
                   src="/xmark-solid.svg"
                   alt=""
                 />
-                <div v-if="pageWidth < 912" class="mobile-close-menu">
+                <div v-if="screenWidth < 912" class="mobile-close-menu">
                   <img
                     @click="isRoomOpen = !isRoomOpen"
                     class="close-icon"
@@ -732,6 +743,9 @@ const roomOptions = {
         :modal="true"
         closable="true"
         dismissableMask="true"
+        :pt="{
+          root: { style: 'border: none' },
+        }"
       >
         <template #container>
           <div class="clicked-attraction">
@@ -881,7 +895,7 @@ const roomOptions = {
             >
               <img src="/xmark-solid.svg" alt="" />
             </div>
-            <div v-if="pageWidth < 912" class="mobile-close-menu">
+            <div v-if="screenWidth < 912" class="mobile-close-menu">
               <img
                 @click="attractionOpened = !attractionOpened"
                 class="close-icon"
@@ -1020,7 +1034,7 @@ const roomOptions = {
 
 .price-tag {
   font-size: 30px;
-  color: #1e90ff;
+  color: #059669;
 }
 
 .room-link {
@@ -1031,11 +1045,11 @@ const roomOptions = {
   right: 0;
   bottom: 0;
   cursor: pointer;
-  color: #1e90ff;
+  color: #059669;
 }
 
 .room-link:hover {
-  border-bottom: 2px solid #1e90ff;
+  border-bottom: 2px solid #059669;
 }
 
 .link-icon {
@@ -1057,6 +1071,7 @@ const roomOptions = {
   position: relative;
   display: flex;
   flex-direction: column;
+  bottom: 5vh;
 }
 
 .room-opened-container::before {
@@ -1067,8 +1082,10 @@ const roomOptions = {
 
 .room-opened-slide-img {
   margin-top: 20px;
-  height: 50vh;
-  object-fit: cover;
+  height: 500px;
+  width: 100%;
+  object-position: center center;
+  object-fit: contain;
 }
 
 .room-icons {
@@ -1089,7 +1106,8 @@ const roomOptions = {
 }
 
 #room-booking-btn {
-  margin: 4.5% auto 4.5% auto;
+  margin-top: 10px;
+  margin-bottom: 5%;
 }
 
 .opened-room-title {
@@ -1124,6 +1142,7 @@ const roomOptions = {
   width: 50%;
   object-fit: cover;
   border-radius: 5px 0 0 5px;
+  aspect-ratio: 4/3;
 }
 
 .text-div {
@@ -1177,6 +1196,7 @@ const roomOptions = {
   height: 50vh;
   object-fit: cover;
   filter: brightness(0.6);
+  border-radius: 0 0 6px 6px;
 }
 
 .header-title {
@@ -1293,6 +1313,7 @@ const roomOptions = {
 
   .room-opened-slide-img {
     width: 100vw;
+    object-fit: cover;
     margin-top: 0;
   }
 
@@ -1318,7 +1339,7 @@ const roomOptions = {
   .text-div {
     padding-bottom: 30px;
   }
-  .text{
+  .text {
     font-size: 14px;
   }
   .clicked-attraction {

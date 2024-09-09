@@ -91,7 +91,7 @@ const displayRooms = [
 
 .gallery-hero {
     margin-bottom: 50px;
-    background: url("/gallery-background-img.jpg") no-repeat center center/cover;
+    background: url(/gallery-background-img.jpg) no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;

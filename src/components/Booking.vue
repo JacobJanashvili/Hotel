@@ -1,194 +1,299 @@
 <script setup>
-import { defineAsyncComponent, ref } from 'vue';
-import Calendar from 'primevue/calendar';
-import Dropdown from 'primevue/dropdown';
-import Button from 'primevue/button';
-import store from '../store/store';
+import { defineAsyncComponent, ref, watch, computed } from "vue";
+import DatePicker from "primevue/datepicker";
+import Button from "primevue/button";
+import store from "../store/store";
+import FloatLabel from "primevue/floatlabel";
+import RoomGuest from "../components/RoomGuest.vue";
 
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import { useRouter } from "vue-router";
+const router = useRouter();
 const Header = defineAsyncComponent({
-    loader: () => import('./Header.vue')
-})
+  loader: () => import("./Header.vue"),
+});
 const Footer = defineAsyncComponent({
-    loader: () => import('./Footer.vue')
-})
-const checkInDate = ref("")
-const checkOutDate = ref("")
-const checkInDateValid = ref(false)
-const checkOutDateValid = ref(false)
-const adultCount = ref()
-const adultCountOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-const adultCountValid = ref(false)
-const childCount = ref()
-const childCountOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-const valid = ref(false)
-const submitButtonClicked = ref(false)
-const currentDate = new Date()
-const tomorrow = new Date(currentDate)
-const selectedNextDay = ref("")
-tomorrow.setDate(currentDate.getDate() + 1)
-const formValidate = () => {
-    if (valid.value === true) {
-        router.replace({ path: '/booking-confirmed' })
-    }
-    if (checkInDate.value) {
-        checkInDateValid.value = true
-    }
-    if (checkOutDate.value) {
-        checkOutDateValid.value = true
-    }
-    if (adultCount.value) {
-        adultCountValid.value = true
-    }
-    if (checkInDateValid.value === true && checkOutDateValid.value === true && adultCountValid.value === true) {
-        valid.value = true
-    }
-    store.commit('setBookingConfirmation')
+  loader: () => import("./Footer.vue"),
+});
+const loading = ref(false);
+const checkInDate = ref("");
+const checkOutDate = ref("");
+const checkInDateValid = ref(false);
+const checkOutDateValid = ref(false);
+const isGuestOpened = ref(false);
+const valid = ref(false);
+const rooms = ref([{ id: 1, adultCount: 1, childCount: 0 }]);
+const submitButtonClicked = ref(false);
+let currentDate = new Date();
+currentDate.setHours(0, 0, 0, 0); // Set time to midnight
 
-}
+let tomorrow = new Date(currentDate);
+tomorrow.setDate(currentDate.getDate() + 1);
+
+const buttonStyle = computed(() => ({
+  marginTop: isGuestOpened.value ? "200px" : "50px",
+}));
+
+watch(checkInDate, (newVal) => {
+  if (newVal) {
+    let newCheckInDate = new Date(newVal);
+    let newCheckOutDate = new Date(newVal);
+    newCheckOutDate.setDate(newCheckInDate.getDate() + 1);
+    checkOutDate.value = newCheckOutDate;
+  } else {
+    checkOutDate.value = "";
+  }
+});
+const formValidate = async () => {
+  checkInDateValid.value = !!checkInDate.value;
+  checkOutDateValid.value = !!checkOutDate.value;
+
+  valid.value = checkInDateValid.value && checkOutDateValid.value;
+
+  if (valid.value) {
+    try {
+      loading.value = true
+      await Promise.all([
+        store.dispatch("setBookingConfirmation"),
+        store.dispatch("setBookingDetails", {
+          checkInDate: checkInDate.value,
+          checkOutDate: checkOutDate.value,
+          rooms: rooms.value,
+        }),
+      ]);
+      await router.push({ path: "/booking-confirmed" },() => {
+        loading.value = false
+      });
+    } catch (error) {
+      console.error("Error during form submission:", error);
+      // Handle error (e.g., show error message to user)
+    }
+  }
+  submitButtonClicked.value = true;
+};
 </script>
 <template>
-    <Header />
-    <div class="booking-hero-wrapper">
-        <div class="booking-hero-subwrapper">
-            <h1>Book your fantastic stay with us</h1>
-            <div class="booking-calendar-wrapper">
-                <div class="booking-calendar p-float-label card">
-                    <Calendar v-model="checkInDate" inputId="check-in" @date-select="checkInDateValid = true, selectedNextDay = new Date(checkInDate), selectedNextDay.setDate(checkInDate.getDate + 1)"
-                        :min-date="currentDate" v-on:clear-click="checkInDateValid = false" show-button-bar
-                        :manualInput="false" class="calendar-dropdown"
-                        :class="{ 'error-dropdown': submitButtonClicked && !checkInDateValid, 'success-dropdown': checkInDateValid }" />
-                    <label for="check-in">Check-in Date</label>
-                    <div v-if="submitButtonClicked && !checkInDateValid">
-                        <small class="p-error">select check-in time</small>
-                    </div>
-                </div>
-                <div class="booking-calendar p-float-label card">
-                    <Calendar v-model="checkOutDate" inputId="check-out" v-on:clear-click="checkOutDateValid = false"
-                        :min-date="tomorrow" @date-select="checkOutDateValid = true" show-button-bar :manualInput="false"
-                        class="calendar-dropdown"
-                        :class="{ 'error-dropdown': submitButtonClicked && !checkOutDateValid, 'success-dropdown': checkOutDateValid }" />
-                    <label for="check-out">Check-out Date</label>
-                    <div v-if="submitButtonClicked && !checkOutDateValid">
-                        <small class="p-error">select check-out time</small>
-                    </div>
-                </div>
-                <div class="occupancy-wrapper">
-                    <div class="booking-calendar p-float-label card">
-                        <Dropdown v-model="adultCount" :options="adultCountOptions" @change="adultCountValid = true"
-                            input-id="adults" class="occupancy-dropdown"
-                            :class="{ 'error-dropdown': submitButtonClicked && !adultCountValid, 'success-dropdown': adultCountValid }" />
-                        <label for="adults">Adults</label>
-                        <div v-if="submitButtonClicked && !adultCountValid">
-                            <small class="p-error">select an amount</small>
-                        </div>
-                    </div>
-                    <div class="booking-calendar p-float-label card">
-                        <Dropdown v-model="childCount" :options="childCountOptions" input-id="children"
-                            class="occupancy-dropdown" />
-                        <label for="children">Child</label>
-                    </div>
-                </div>
-
+  <Header />
+  <div class="booking-hero-wrapper">
+    <div class="booking-hero-subwrapper">
+      <h1>Book your fantastic stay with us</h1>
+      <div class="booking-calendar-wrapper">
+        <div class="booking-calendar p-float-label card">
+          <FloatLabel>
+            <DatePicker
+              v-model="checkInDate"
+              inputId="check-in"
+              showIcon
+              iconDisplay="input"
+              showTime
+              hourFormat="12"
+              :pt="{
+                calendar: {
+                  style: {
+                    'font-family': 'Monsterrat, sans-serif',
+                  },
+                },
+                header: {
+                  style: {
+                    'font-family': 'Monsterrat, sans-serif',
+                  },
+                },
+                timePicker: {
+                  style: {
+                    'font-family': 'Monsterrat, sans-serif',
+                  },
+                },
+                buttonbar: {
+                  style: {
+                    'font-family': 'Monsterrat, sans-serif',
+                  },
+                },
+              }"
+              @date-select="
+                (checkInDateValid = true),
+                  (selectedNextDay = new Date(checkInDate)),
+                  selectedNextDay.setDate(checkInDate.getDate + 1)
+              "
+              :min-date="currentDate"
+              v-on:clear-click="checkInDateValid = false"
+              show-button-bar
+              :manualInput="false"
+              :class="{
+                'error-dropdown': submitButtonClicked && !checkInDateValid,
+                'success-dropdown': checkInDateValid,
+              }"
+            />
+            <label for="check-in">Check-in Date</label>
+            <div v-if="submitButtonClicked && !checkInDateValid">
+              <small class="error-text">select check-in time</small>
             </div>
-            <Button label="Submit" @click="formValidate(); submitButtonClicked = true" />
-
+          </FloatLabel>
         </div>
+        <div class="booking-calendar p-float-label card">
+          <FloatLabel>
+            <DatePicker
+              v-model="checkOutDate"
+              inputId="check-out"
+              showIcon
+              iconDisplay="input"
+              showTime
+              hourFormat="12"
+              v-on:clear-click="checkOutDateValid = false"
+              :min-date="tomorrow"
+              @date-select="checkOutDateValid = true"
+              :pt="{
+                calendar: {
+                  style: {
+                    'font-family': 'Monsterrat, sans-serif',
+                  },
+                },
+                header: {
+                  style: {
+                    'font-family': 'Monsterrat, sans-serif',
+                  },
+                },
+                timePicker: {
+                  style: {
+                    'font-family': 'Monsterrat, sans-serif',
+                  },
+                },
+                buttonbar: {
+                  style: {
+                    'font-family': 'Monsterrat, sans-serif',
+                  },
+                },
+              }"
+              show-button-bar
+              :manualInput="false"
+              class="calendar-dropdown"
+              :class="{
+                'error-dropdown': submitButtonClicked && !checkOutDateValid,
+                'success-dropdown': checkOutDateValid,
+              }"
+            />
+            <label for="check-out">Check-out Date</label>
+            <div v-if="submitButtonClicked && !checkOutDateValid">
+              <small class="error-text">select check-out time</small>
+            </div>
+          </FloatLabel>
+        </div>
+        <RoomGuest
+          v-model:isGuestOpened="isGuestOpened"
+          v-model:modelValue="rooms"
+        />
+      </div>
+      <Button
+        :label="loading? '' : 'Submit'"
+        :loading="loading"
+        @click="
+          formValidate();
+          submitButtonClicked = true;
+          console.log(
+            `Button clicked, isGuestOpened:, ${isGuestOpened}, RoomCount: ${rooms.values.length}`
+          );
+        "
+      />
     </div>
-    <Footer />
+  </div>
 </template>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 * {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .booking-hero-wrapper {
-    height: 100vh;
-    background: url(/booking-background.jpg) no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
+  min-height: 100vh;
+  background: url(/booking-background.jpg) no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  width: 100%;
 }
 
 .booking-hero-wrapper::before {
-    background-color: rgba(0, 0, 0, 0.600);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 .booking-hero-subwrapper {
-    z-index: 1;
-    color: white;
+  z-index: 1;
+  color: white;
 }
 
 .booking-hero-subwrapper h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .booking-calendar-wrapper {
-
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .booking-calendar {
-    height: 25px;
-    margin: 0 5px;
+  height: 25px;
+  margin: 0 5px;
 }
-
+.p-select {
+  width: 200px;
+}
 .occupancy-wrapper {
-    display: flex;
+  display: flex;
 }
 
 .p-button {
-    margin-top: 30px;
-    padding: 10px 25px;
-    text-align: center;
-    width: 100%;
-    margin: 50px auto;
+  margin-top: 30px;
+  padding: 10px 25px;
+  text-align: center;
+  width: 100%;
 }
 
 .p-dropdown {
-    width: 100px;
+  width: 100px;
 }
 
 .error-dropdown {
-    border: 2px solid red;
+  position: relative;
+  border: 2px solid red;
+}
+.error-text {
+  position: absolute;
 }
 
 .success-dropdown {
-    border: 2px solid green;
+  border: 2px solid green;
 }
 
 @media (max-width: 900px) and (min-width: 100px) {
-    .booking-calendar-wrapper {
-        flex-direction: column;
-        width: 100%;
-    }
+  .booking-calendar-wrapper {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
 
-    .booking-hero-subwrapper h1 {
-        font-size: 22px;
-    }
+  .booking-hero-subwrapper h1 {
+    font-size: 22px;
+  }
 
-    .calendar-dropdown {
-        width: 90vw;
-    }
+  .booking-calendar {
+    margin: 20px 10px;
+  }
 
-    .booking-calendar {
-        margin: 20px 10px;
-    }
-
-    .p-button {
-        width: 90vw;
-        margin-left: 10px;
-    }
-}</style>
+  .p-button {
+    width: 90vw;
+    margin-left: 10px;
+  }
+  .occupancy-wrapper {
+    flex-direction: column;
+  }
+}
+</style>

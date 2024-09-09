@@ -6,14 +6,18 @@
         backgroundColor:
           scrollValue > 4
             ? 'white'
-            : (pageWidth < 912 ? 'white' : 'transparent') ||
-              (router.currentRoute.value.name == 'not-found' ? 'white' : ''),
+            : (screenWidth < 912 ? 'white' : 'transparent') ||
+              (router.currentRoute.value.name == 'not-found' ? 'white' : '') ||
+              (router.currentRoute.value.name = 'BookingConfirmed'
+                ? 'black'
+                : ''),
       },
       {
         color:
           scrollValue > 4
             ? 'black'
-            : router.currentRoute.value.name == 'not-found'
+            : router.currentRoute.value.name == 'not-found' ||
+              router.currentRoute.value.name == 'BookingConfirmed'
             ? 'black'
             : 'white',
       },
@@ -21,7 +25,8 @@
         boxShadow:
           scrollValue > 4
             ? '3px 10px 5px 0px rgba(0,0,0,0.11)'
-            : router.currentRoute.value.name == 'not-found'
+            : router.currentRoute.value.name == 'not-found' ||
+              router.currentRoute.value.name == 'BookingConfirmed'
             ? '3px 10px 5px 0px rgba(0,0,0,0.11)'
             : '',
       },
@@ -34,7 +39,9 @@
         filter:
           scrollValue > 4
             ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
-            : router.currentRoute.value.name == 'not-found' || pageWidth < 912
+            : router.currentRoute.value.name == 'not-found' ||
+              screenWidth < 912 ||
+              router.currentRoute.value.name == 'BookingConfirmed'
             ? 'invert(0%) sepia(8%) saturate(7469%) hue-rotate(300deg) brightness(103%) contrast(110%)'
             : 'invert(99%) sepia(22%) saturate(12%) hue-rotate(269deg) brightness(113%) contrast(101%)',
       }"
@@ -45,7 +52,7 @@
     <div class="menu-items">
       <div
         @mouseenter="(hover = true), (menu_id = 5)"
-        @mouseleave="(hover = false), console.log(hover)"
+        @mouseleave="hover = false"
       >
         <router-link
           to="/"
@@ -53,7 +60,8 @@
             color:
               scrollValue > 4
                 ? 'black'
-                : router.currentRoute.value.name == 'not-found'
+                : router.currentRoute.value.name == 'not-found' ||
+                  router.currentRoute.value.name == 'BookingConfirmed'
                 ? 'black'
                 : 'white',
             'pointer-events':
@@ -83,12 +91,13 @@
               {
                 filter:
                   router.currentRoute.value.path === '/'
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(49%) sepia(87%) saturate(6453%) hue-rotate(150deg) brightness(99%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : hover && menu_id == 5
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
-                    : router.currentRoute.value.name == 'not-found'
+                    ? 'invert(49%) sepia(87%) saturate(6453%) hue-rotate(150deg) brightness(99%) contrast(96%)'
+                    : router.currentRoute.value.name == 'not-found' ||
+                      router.currentRoute.value.name == 'BookingConfirmed'
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
               },
@@ -102,7 +111,7 @@
       </div>
       <div
         @mouseenter="(hover = true), (menu_id = 7)"
-        @mouseleave="(hover = false), console.log(hover)"
+        @mouseleave="hover = false"
       >
         <router-link
           to="/about"
@@ -111,7 +120,8 @@
             color:
               scrollValue > 4
                 ? 'black'
-                : router.currentRoute.value.name == 'not-found'
+                : router.currentRoute.value.name == 'not-found' ||
+                  router.currentRoute.value.name == 'BookingConfirmed'
                 ? 'black'
                 : 'white',
             'pointer-events':
@@ -141,12 +151,13 @@
               {
                 filter:
                   router.currentRoute.value.path === '/about'
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(33%) sepia(99%) saturate(1132%) hue-rotate(135deg) brightness(94%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : hover && menu_id == 7
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
-                    : router.currentRoute.value.name == 'not-found'
+                    ? 'invert(33%) sepia(99%) saturate(1132%) hue-rotate(135deg) brightness(94%) contrast(96%)'
+                    : router.currentRoute.value.name == 'not-found' ||
+                      router.currentRoute.value.name == 'BookingConfirmed'
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
               },
@@ -160,7 +171,7 @@
       </div>
       <div
         @mouseenter="(hover = true), (menu_id = 8)"
-        @mouseleave="(hover = false), console.log(hover)"
+        @mouseleave="hover = false"
       >
         <router-link
           to="/attractions"
@@ -168,7 +179,8 @@
             color:
               scrollValue > 4
                 ? 'black'
-                : router.currentRoute.value.name == 'not-found'
+                : router.currentRoute.value.name == 'not-found' ||
+                  router.currentRoute.value.name == 'BookingConfirmed'
                 ? 'black'
                 : 'white',
             'pointer-events':
@@ -192,7 +204,7 @@
               {
                 filter:
                   hover && menu_id == 8
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
@@ -200,12 +212,13 @@
               {
                 filter:
                   router.currentRoute.value.path === '/attractions'
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : hover && menu_id == 8
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
-                    : router.currentRoute.value.name == 'not-found'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
+                    : router.currentRoute.value.name == 'not-found' ||
+                      router.currentRoute.value.name == 'BookingConfirmed'
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
               },
@@ -219,7 +232,7 @@
       </div>
       <div
         @mouseenter="(hover = true), (menu_id = 1)"
-        @mouseleave="(hover = false), console.log(hover)"
+        @mouseleave="hover = false"
       >
         <router-link
           to="/kosher"
@@ -234,7 +247,8 @@
             color:
               scrollValue > 4
                 ? 'black'
-                : router.currentRoute.value.name == 'not-found'
+                : router.currentRoute.value.name == 'not-found' ||
+                  router.currentRoute.value.name == 'BookingConfirmed'
                 ? 'black'
                 : 'white',
           }"
@@ -250,7 +264,7 @@
               {
                 filter:
                   hover && menu_id == 1
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
@@ -258,12 +272,13 @@
               {
                 filter:
                   router.currentRoute.value.path === '/kosher'
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : hover && menu_id == 1
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
-                    : router.currentRoute.value.name == 'not-found'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
+                    : router.currentRoute.value.name == 'not-found' ||
+                      router.currentRoute.value.name == 'BookingConfirmed'
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
               },
@@ -277,7 +292,7 @@
       </div>
       <div
         @mouseenter="(hover = true), (menu_id = 2)"
-        @mouseleave="(hover = false), console.log(hover)"
+        @mouseleave="hover = false"
       >
         <router-link
           to="/rooms"
@@ -291,7 +306,8 @@
             color:
               scrollValue > 4
                 ? 'black'
-                : router.currentRoute.value.name == 'not-found'
+                : router.currentRoute.value.name == 'not-found' ||
+                  router.currentRoute.value.name == 'BookingConfirmed'
                 ? 'black'
                 : 'white',
           }"
@@ -307,7 +323,7 @@
               {
                 filter:
                   hover && menu_id == 2
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
@@ -315,12 +331,13 @@
               {
                 filter:
                   router.currentRoute.value.path === '/rooms'
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : hover && menu_id == 2
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
-                    : router.currentRoute.value.name == 'not-found'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
+                    : router.currentRoute.value.name == 'not-found' ||
+                      router.currentRoute.value.name == 'BookingConfirmed'
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
               },
@@ -334,7 +351,7 @@
       </div>
       <div
         @mouseenter="(hover = true), (menu_id = 3)"
-        @mouseleave="(hover = false), console.log(hover)"
+        @mouseleave="hover = false"
       >
         <router-link
           to="/gallery"
@@ -348,7 +365,8 @@
             color:
               scrollValue > 4
                 ? 'black'
-                : router.currentRoute.value.name == 'not-found'
+                : router.currentRoute.value.name == 'not-found' ||
+                  router.currentRoute.value.name == 'BookingConfirmed'
                 ? 'black'
                 : 'white',
           }"
@@ -364,7 +382,7 @@
               {
                 filter:
                   hover && menu_id == 3
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
@@ -372,12 +390,13 @@
               {
                 filter:
                   router.currentRoute.value.path === '/gallery'
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
                     : scrollValue > 4
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : hover && menu_id == 3
-                    ? 'invert(41%) sepia(87%) saturate(1623%) hue-rotate(192deg) brightness(101%) contrast(103%)'
-                    : router.currentRoute.value.name == 'not-found'
+                    ? 'invert(60%) sepia(96%) saturate(5680%) hue-rotate(142deg) brightness(91%) contrast(96%)'
+                    : router.currentRoute.value.name == 'not-found' ||
+                      router.currentRoute.value.name == 'BookingConfirmed'
                     ? 'invert(0%) sepia(72%) saturate(7469%) hue-rotate(10deg) brightness(91%) contrast(100%)'
                     : 'invert(100%) sepia(97%) saturate(13%) hue-rotate(3deg) brightness(105%) contrast(102%)',
               },
@@ -400,7 +419,8 @@
                 ? btnHover
                   ? 'white'
                   : 'black'
-                : router.currentRoute.value.name == 'not-found'
+                : router.currentRoute.value.name == 'not-found' ||
+                  router.currentRoute.value.name == 'BookingConfirmed'
                 ? btnHover
                   ? 'white'
                   : 'black'
@@ -412,7 +432,8 @@
               ? '1px solid black'
               : scrollValue > 4
               ? '1px solid black'
-              : router.currentRoute.value.name == 'not-found'
+              : router.currentRoute.value.name == 'not-found' ||
+                router.currentRoute.value.name == 'BookingConfirmed'
               ? '1px solid black'
               : '1px solid white',
           },
@@ -434,7 +455,8 @@
               filter:
                 scrollValue > 4
                   ? 'invert(0%) sepia(8%) saturate(7469%) hue-rotate(300deg) brightness(103%) contrast(110%)'
-                  : router.currentRoute.value.name == 'not-found'
+                  : router.currentRoute.value.name == 'not-found' ||
+                    router.currentRoute.value.name == 'BookingConfirmed'
                   ? 'invert(0%) sepia(8%) saturate(7469%) hue-rotate(300deg) brightness(103%) contrast(110%)'
                   : 'invert(99%) sepia(22%) saturate(12%) hue-rotate(269deg) brightness(113%) contrast(101%)',
             }"
@@ -449,7 +471,8 @@
               filter:
                 scrollValue > 4
                   ? 'invert(0%) sepia(8%) saturate(7469%) hue-rotate(300deg) brightness(103%) contrast(110%)'
-                  : router.currentRoute.value.name == 'not-found'
+                  : router.currentRoute.value.name == 'not-found' ||
+                    router.currentRoute.value.name == 'BookingConfirmed'
                   ? 'invert(0%) sepia(8%) saturate(7469%) hue-rotate(300deg) brightness(103%) contrast(110%)'
                   : 'invert(99%) sepia(22%) saturate(12%) hue-rotate(269deg) brightness(113%) contrast(101%)',
             }"
@@ -469,12 +492,12 @@
     <div
       class="burger-menu-wrapper"
       @click="triggerBurgerMenu"
-      v-if="pageWidth <= 912 && !burgerMenuClicked"
+      v-if="screenWidth <= 912 && !burgerMenuClicked"
     >
       <img class="burger-menu" src="/bars-solid.svg" alt="" />
     </div>
     <img
-      v-if="pageWidth <= 912 && burgerMenuClicked"
+      v-if="screenWidth <= 912 && burgerMenuClicked"
       @click="triggerBurgerMenu"
       class="close-burger-menu"
       src="/xmark-solid.svg"
@@ -482,7 +505,7 @@
     />
     <Button
       label="BOOK NOW"
-      v-if="pageWidth <= 912 && !burgerMenuClicked"
+      v-if="screenWidth <= 912 && !burgerMenuClicked"
       severity="primary"
       @click="$router.push('/booking')"
       class="mobile-book-call-to-action"
@@ -635,6 +658,8 @@ import { computed } from "@vue/reactivity";
 import { useRouter } from "vue-router";
 let scrollValue = ref(0);
 let menu_id = ref(0);
+const screenWidth = ref(window.screen.width);
+
 let btnHover = ref(false);
 let hover = ref(false);
 let burgerMenuClicked = ref(false);
@@ -642,14 +667,16 @@ const router = useRouter();
 const triggerBurgerMenu = () => {
   burgerMenuClicked.value = !burgerMenuClicked.value;
 };
+const updateScreenWidth = () => {
+  screenWidth.value = window.innerWidth;
+};
+
 onMounted(() => {
   window.addEventListener("scroll", () => {
     scrollValue.value = window.scrollY;
   });
-  console.log(pageWidth.value);
+  window.addEventListener("resize", updateScreenWidth);
 });
-const pageWidth = computed(() => store.state.pageWidth);
-
 const isDropdownOpen = ref(false);
 
 const changeLanguage = (language) => {
@@ -665,7 +692,7 @@ const languages = ["ENG", "РУС", "יבר"];
 const otherLanguages = computed(() => {
   return languages.filter((language) => language !== selectedLanguage.value);
 });
-console.log(router.currentRoute.value.path);
+// console.log(router.currentRoute.value.path);
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
@@ -673,7 +700,6 @@ console.log(router.currentRoute.value.path);
 * {
   font-family: "Montserrat", sans-serif;
 }
-
 
 .booking-btn {
   display: block;
@@ -704,6 +730,7 @@ console.log(router.currentRoute.value.path);
   margin-right: 5%;
   height: auto;
   border: 0;
+  cursor: pointer;
 }
 
 .language-flags {
@@ -726,6 +753,17 @@ console.log(router.currentRoute.value.path);
   z-index: 2;
   top: 0;
   color: white;
+}
+.booking-page-menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px 0 7px 0;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  color: black;
 }
 
 .menu-items {
@@ -772,7 +810,7 @@ console.log(router.currentRoute.value.path);
 
 .menu-item::after {
   content: "";
-  background-color: #1e90ff;
+  background-color: #059669;
   width: 0%;
   height: 2px;
   margin-top: 2px;
@@ -820,11 +858,10 @@ console.log(router.currentRoute.value.path);
 
 .mobile-book-call-to-action {
   position: absolute;
-  left: 50%;
-  right: 50%;
+  right: 15%;
   bottom: 0;
   top: 0;
-  width: 28%;
+  width: 25vw;
 }
 
 .mobile-menu-booking-btn {

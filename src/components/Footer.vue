@@ -123,7 +123,7 @@ footer {
 }
 
 .item-list p:hover {
-    color: #1E90FF;
+    color: #059669;
 }
 
 .item-icon {
@@ -140,7 +140,7 @@ footer {
     padding-bottom: 5px;
 }
 
-@media (max-width: 912px) and (min-width: 100px) {
+@media (max-width: 1024px) and (min-width: 100px) {
     .copyright_and_logo {
         text-align: center;
     }
