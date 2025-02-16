@@ -38,7 +38,7 @@
                 </div>
                 <div class="footer-contact-menu">
                     <p class="contact-title">Contact us</p>
-                    <p class="phone-number">(+995) 599 74 00 44</p>
+                    <p class="phone-number">(+995) 571 28 70 70</p>
                     <p class="email">tourfa.hotel@gmail.com</p>
                 </div>
                 <div class="footer-location-menu">
